@@ -1,0 +1,11 @@
+Node3D
+CSGBox3D
+Camera3D
+MeshInstance3D
+CharacterBody3D
+RigidBody3D
+CollisionShape3D
+StaticBody3D
+WorldEnvironment
+DirectionalLight3D
+CollisionPolygon3D

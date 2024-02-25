@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brbykk4k67c1e"
+path="res://.godot/imported/Glock17.obj-e6abd177c30a17c5f65301b255e4575f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Glock17.obj-e6abd177c30a17c5f65301b255e4575f.mesh"]
+
+source_file="res://PSXPistolPack[FIXED]/Files/Glock 17/Glock17.obj"
+dest_files=["res://.godot/imported/Glock17.obj-e6abd177c30a17c5f65301b255e4575f.mesh", "res://.godot/imported/Glock17.obj-e6abd177c30a17c5f65301b255e4575f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
