@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://8rxwokly5ikl"]
+[gd_scene load_steps=11 format=3 uid="uid://8rxwokly5ikl"]
 
 [ext_resource type="Texture2D" uid="uid://t4wtbo7u2owx" path="res://kenney-prototype-textures-db6622fbe90621eed70a0b417ae8d97281f45e6c/addons/kenney_prototype_textures/orange/texture_08.png" id="1_bdv74"]
 [ext_resource type="Script" path="res://Player.gd" id="1_s2on2"]
+[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
 
 [sub_resource type="Environment" id="Environment_yyttt"]
 
@@ -49,6 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67427, 0)
 script = ExtResource("1_s2on2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.896811, 0, 0.442414, 0, 1, 0, -0.442414, 0, 0.896811, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_so11r")
 surface_material_override/0 = SubResource("StandardMaterial3D_8b3ad")
 
@@ -60,6 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598956, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Neck"]
 fov = 90.0
+
+[node name="HighCalibler" type="MeshInstance3D" parent="Player/Neck/Camera3D"]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.324122, -0.475299, -0.632003)
+mesh = ExtResource("3_jb3s6")
+skeleton = NodePath("../../../..")
 
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.729782)

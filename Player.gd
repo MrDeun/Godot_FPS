@@ -1,13 +1,13 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 6.6
+const JUMP_VELOCITY = 10.0
 const MOUSE_SENSITIVITY = 0.01
 
 #Bob camera variables
 const BOB_FREQ = 2.0
-const BOB_AMP = 0.1
+const BOB_AMP = 0.05
 var t_bob = 0.0
 
 
@@ -28,7 +28,7 @@ func _unhandled_input(event) -> void:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 			neck_camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-			neck_camera.rotation.x = clamp(neck_camera.rotation.x,deg_to_rad(-30),deg_to_rad(60))
+			neck_camera.rotation.x = clamp(neck_camera.rotation.x,deg_to_rad(-60),deg_to_rad(60))
 
 func _physics_process(delta):
 	# Add the gravity.
