@@ -1,1 +1,4 @@
-res://cyclops_level_builder/cyclops_global_scene.tscn
+res://node_3d.tscn
+res://addons/cyclops_level_builder/shaders/outline_shader.tres
+res://addons/cyclops_level_builder/docks/material_palette/thumbnail_selected_theme.tres
+res://addons/cyclops_level_builder/docks/material_palette/thumbnail_normal_theme.tres

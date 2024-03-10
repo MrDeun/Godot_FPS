@@ -1,0 +1,584 @@
+[gd_scene load_steps=16 format=3 uid="uid://8rxwokly5ikl"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_s2on2"]
+[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
+
+[sub_resource type="Environment" id="Environment_yyttt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_so11r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b3ad"]
+transparency = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.321569, 0.415686, 0.388235, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_58fdk"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="Environment" id="Environment_ave0l"]
+ssr_fade_in = 0.197926
+ssr_fade_out = 4.0
+ssao_power = 1.66435
+fog_light_energy = 1.4
+volumetric_fog_density = 0.0831
+
+[sub_resource type="GDScript" id="GDScript_fpsby"]
+script/source = "# MIT License
+#
+# Copyright (c) 2023 Mark McKay
+# https://github.com/blackears/cyclopsLevelBuilder
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the \"Software\"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+@tool
+extends Node3D
+class_name CyclopsBlock
+
+signal mesh_changed
+
+@export var collision_type:Collision.Type = Collision.Type.STATIC:
+	get:
+		return collision_type
+	set(value):
+		collision_type = value
+		update_physics_body()
+
+var mesh_instance:MeshInstance3D
+var mesh_wire:MeshInstance3D
+var collision_body:PhysicsBody3D
+var collision_shape:CollisionShape3D
+#var occluder:OccluderInstance3D
+#var selected:bool
+var active:bool
+
+var dirty:bool = true
+
+var control_mesh:ConvexVolume
+
+@export var block_data:ConvexBlockData:
+	get:
+		return block_data
+	set(value):
+		if block_data != value:
+			block_data = value
+			control_mesh = ConvexVolume.new()
+			control_mesh.init_from_convex_block_data(block_data)
+			
+			dirty = true
+			mesh_changed.emit()
+	
+@export var materials:Array[Material]
+
+var default_material:Material = preload(\"res://addons/cyclops_level_builder/materials/grid.tres\")
+var display_mode:DisplayMode.Type = DisplayMode.Type.MATERIAL
+
+@export_flags_3d_physics var collision_layer:int = 1:
+	get:
+		return collision_layer
+	set(value):
+		collision_layer = value
+		if collision_body:
+			collision_body.collision_layer = collision_layer
+		
+@export_flags_3d_physics var collision_mask:int = 1:
+	get:
+		return collision_mask
+	set(value):
+		collision_mask = value
+		if collision_body:
+			collision_body.collision_mask = collision_mask
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	mesh_instance = MeshInstance3D.new()
+	add_child(mesh_instance)
+	mesh_instance.gi_mode = GeometryInstance3D.GI_MODE_STATIC
+
+	#print(\"block owner path %s\" % owner.get_path())
+
+	if Engine.is_editor_hint():
+		mesh_wire = MeshInstance3D.new()
+		add_child(mesh_wire)
+	
+	collision_shape = CollisionShape3D.new()
+
+	#occluder = OccluderInstance3D.new()
+	#add_child(occluder)
+	
+	build_from_block()
+	update_physics_body()
+
+func update_physics_body():
+	
+	if collision_body:
+		collision_body.remove_child(collision_shape)
+		collision_body.queue_free()
+		collision_body = null
+	
+	match collision_type:
+		Collision.Type.STATIC:
+			collision_body = StaticBody3D.new()
+		Collision.Type.KINEMATIC:
+			collision_body = CharacterBody3D.new()
+		Collision.Type.RIGID:
+			collision_body = RigidBody3D.new()
+			
+	if collision_body:
+		collision_body.collision_layer = collision_layer
+		collision_body.collision_mask = collision_mask
+		add_child(collision_body)
+		
+		collision_body.add_child(collision_shape)
+	
+
+func build_from_block():
+		
+	dirty = false
+	
+	mesh_instance.mesh = null
+	collision_shape.shape = null
+
+	if Engine.is_editor_hint():
+#		var global_scene:CyclopsGlobalScene = get_node(\"/root/CyclopsAutoload\")
+		var global_scene = get_node(\"/root/CyclopsAutoload\")
+		display_mode = global_scene.builder.display_mode
+	
+#	print(\"block_data %s\" % block_data)
+#	print(\"vert points %s\" % block_data.vertex_points)
+	if !block_data:
+		return
+	
+#	print(\"got block data\")		
+	
+	var vol:ConvexVolume = ConvexVolume.new()
+	vol.init_from_convex_block_data(block_data)
+	
+	#print(\"volume %s\" % vol)
+	
+	var mesh:ArrayMesh
+
+	if Engine.is_editor_hint():
+		var global_scene = get_node(\"/root/CyclopsAutoload\")
+		mesh_wire.mesh = vol.create_mesh_wire(global_scene.outline_material)
+		#print (\"added wireframe\")
+
+		if display_mode == DisplayMode.Type.MATERIAL:
+			mesh = vol.create_mesh(materials, default_material)
+		if display_mode == DisplayMode.Type.MESH:
+			mesh = vol.create_mesh(materials, default_material, true)
+			#print (\"added faces\")
+	else:
+		mesh = vol.create_mesh(materials, default_material)
+	
+	mesh_instance.mesh = mesh
+	
+	var shape:ConvexPolygonShape3D = ConvexPolygonShape3D.new()
+	shape.points = vol.get_points()
+	collision_shape.shape = shape
+	
+	#if !Engine.is_editor_hint():
+		##Disabling this in the editor for now since this is causing slowdown
+		#var occluder_object:ArrayOccluder3D = ArrayOccluder3D.new()
+		#occluder_object.vertices = vol.get_points()
+		#occluder_object.indices = vol.get_trimesh_indices()
+		#occluder.occluder = occluder_object
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if dirty:
+			
+		build_from_block()
+
+	if Engine.is_editor_hint():
+#		var global_scene:CyclopsGlobalScene = get_node(\"/root/CyclopsAutoload\")
+		var global_scene = get_node(\"/root/CyclopsAutoload\")
+
+		if display_mode != global_scene.builder.display_mode:
+			dirty = true
+			return
+
+func draw_unit_labels(viewport_camera:Camera3D, local_to_world:Transform3D):
+	var global_scene:CyclopsGlobalScene = get_node(\"/root/CyclopsAutoload\")
+
+	var font:Font = global_scene.units_font
+	var font_size:float = global_scene.units_font_size	
+	var descent:float = font.get_descent(font_size)
+	var text_offset:Vector2 = Vector2(0, -global_scene.vertex_radius - descent)
+	
+	if control_mesh:
+		for e_idx in control_mesh.edges.size():
+			var e:ConvexVolume.EdgeInfo = control_mesh.edges[e_idx]
+			var focus:Vector3 = local_to_world * e.get_midpoint()
+			if !viewport_camera.is_position_behind(focus):
+				var focus_2d:Vector2 = viewport_camera.unproject_position(focus)
+				
+				var v0:ConvexVolume.VertexInfo = control_mesh.vertices[e.start_index]
+				var v1:ConvexVolume.VertexInfo = control_mesh.vertices[e.end_index]
+				var distance:Vector3 = v1.point - v0.point
+				global_scene.draw_text(\"%.3f\" % distance.length(), focus_2d, font, font_size)
+		
+		
+
+func append_mesh_outline(mesh:ImmediateMesh, viewport_camera:Camera3D, local_to_world:Transform3D, mat:Material):
+	#var global_scene:CyclopsGlobalScene = get_node(\"/root/CyclopsAutoload\")
+	
+	if control_mesh:
+		control_mesh.append_mesh_outline(mesh, viewport_camera, local_to_world, mat)
+
+func append_mesh_wire(mesh:ImmediateMesh):
+	var global_scene:CyclopsGlobalScene = get_node(\"/root/CyclopsAutoload\")
+	
+	var mat:Material = global_scene.outline_material
+	control_mesh.append_mesh_wire(mesh, mat)
+
+
+func intersect_ray_closest(origin:Vector3, dir:Vector3)->IntersectResults:
+	if !block_data:
+		return null
+	
+	var xform:Transform3D = global_transform.affine_inverse()
+	var origin_local:Vector3 = xform * origin
+	var dir_local:Vector3 = xform.basis * dir
+	
+	var result:IntersectResults = control_mesh.intersect_ray_closest(origin_local, dir_local)
+	if result:
+		result.object = self
+		
+	return result
+
+
+func select_face(face_idx:int, select_type:Selection.Type = Selection.Type.REPLACE):
+	if select_type == Selection.Type.REPLACE:
+		for f in control_mesh.faces:
+			f.selected = f.index == face_idx
+	elif select_type == Selection.Type.ADD:
+		control_mesh.faces[face_idx].selected = true
+	elif select_type == Selection.Type.SUBTRACT:
+		control_mesh.faces[face_idx].selected = true
+	elif select_type == Selection.Type.TOGGLE:
+		control_mesh.faces[face_idx].selected = !control_mesh.faces[face_idx].selected
+
+	mesh_changed.emit()
+"
+
+[sub_resource type="GDScript" id="GDScript_qf3wr"]
+script/source = "# MIT License
+#
+# Copyright (c) 2023 Mark McKay
+# https://github.com/blackears/cyclopsLevelBuilder
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the \"Software\"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+@tool
+extends Resource
+class_name ConvexBlockData
+
+@export var selected:bool = false
+@export var active:bool = false
+@export var collsion:bool = true
+@export_flags_3d_physics var physics_layer:int
+@export_flags_3d_physics var physics_mask:int
+
+@export var vertex_points:PackedVector3Array  #Per vertex
+@export var vertex_selected:PackedByteArray  #Per vertex
+#@export var vertex_active:PackedByteArray  #Per vertex
+@export var active_vertex:int
+
+@export var edge_vertex_indices:PackedInt32Array
+@export var edge_selected:PackedByteArray
+#@export var edge_active:PackedByteArray
+@export var active_edge:int
+@export var edge_face_indices:PackedInt32Array
+
+@export var face_vertex_count:PackedInt32Array #Number of verts in each face
+@export var face_vertex_indices:PackedInt32Array  #Vertex index per face
+@export var face_material_indices:PackedInt32Array #Material index for each face
+@export var face_uv_transform:Array[Transform2D]
+@export var face_visible:PackedByteArray
+@export var face_color:PackedColorArray
+@export var face_selected:PackedByteArray  #Per face
+#@export var face_active:PackedByteArray  #Per face
+@export var active_face:int
+@export var face_ids:PackedInt32Array  #Per face
+
+#Validate arrays to make sure they're the right size
+func validate_arrays():
+	var num_faces:int = face_vertex_count.size()
+
+	if face_visible.size() < num_faces:
+		var arr:PackedByteArray
+		arr.resize(num_faces - face_visible.size())
+		arr.fill(true)
+		face_visible.append_array(arr)
+		
+
+	if face_color.size() < num_faces:
+		var arr:PackedColorArray
+		arr.resize(num_faces - face_color.size())
+		arr.fill(Color.WHITE)
+		face_color.append_array(arr)
+		
+
+"
+
+[sub_resource type="Resource" id="Resource_4k8m8"]
+script = SubResource("GDScript_qf3wr")
+selected = false
+active = false
+collsion = true
+physics_layer = 0
+physics_mask = 0
+vertex_points = PackedVector3Array(0, 1, 0, 0, 1, 40, 0, 0, 40, 0, 0, 0, 30, 1, 0, 30, 1, 40, 30, 0, 40, 30, 0, 0)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
+face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[sub_resource type="Resource" id="Resource_lk2gv"]
+script = SubResource("GDScript_qf3wr")
+selected = false
+active = false
+collsion = true
+physics_layer = 0
+physics_mask = 0
+vertex_points = PackedVector3Array(0, 0, 1, 0, 0, 0, 0, 17, 0, 0, 17, 1, 29, 17, 0, 29, 17, 1, 29, 0, 0, 29, 0, 1)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 3, 2, 4, 6, 4, 1, 6, 7, 0, 5, 7, 6, 7)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 5, 0, 2, 0, 1, 0, 3, 1, 4, 1, 3, 1, 2, 2, 4, 2, 5, 3, 5, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 5, 3, 2, 6, 4, 2, 1, 7, 0, 3, 5, 7, 5, 4, 6, 7, 6, 1, 0)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
+face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[sub_resource type="Resource" id="Resource_dkoni"]
+script = SubResource("GDScript_qf3wr")
+selected = false
+active = false
+collsion = true
+physics_layer = 0
+physics_mask = 0
+vertex_points = PackedVector3Array(0, 17, 0, 0, 17, 39, 0, 0, 39, 0, 0, 0, 1, 17, 0, 1, 17, 39, 1, 0, 39, 1, 0, 0)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
+face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[sub_resource type="Resource" id="Resource_6uxyd"]
+script = SubResource("GDScript_qf3wr")
+selected = false
+active = false
+collsion = true
+physics_layer = 0
+physics_mask = 0
+vertex_points = PackedVector3Array(0, 17, 0, 0, 17, 1, 0, 0, 1, 0, 0, 0, 29, 17, 0, 29, 17, 1, 29, 0, 1, 29, 0, 0)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
+face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[sub_resource type="Resource" id="Resource_nd333"]
+script = SubResource("GDScript_qf3wr")
+selected = false
+active = false
+collsion = true
+physics_layer = 0
+physics_mask = 0
+vertex_points = PackedVector3Array(30, 0, -38, 30, 17, -38, 29, 17, -38, 29, 0, -38, 29, 0, 1, 29, 17, 1, 30, 17, 1, 30, 0, 1)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 3, 2, 5, 5, 4, 6, 5, 1, 6, 4, 7, 7, 0, 6, 7)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 5, 0, 2, 0, 1, 0, 3, 1, 3, 1, 2, 1, 4, 2, 4, 2, 5, 3, 4, 3, 5, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 3, 2, 5, 6, 5, 2, 1, 0, 3, 4, 7, 6, 7, 4, 5, 6, 1, 0, 7)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
+face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+face_selected = PackedByteArray(1, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[sub_resource type="Resource" id="Resource_s2k5x"]
+script = SubResource("GDScript_qf3wr")
+selected = false
+active = false
+collsion = true
+physics_layer = 0
+physics_mask = 0
+vertex_points = PackedVector3Array(0, 1, 0, 0, 1, 40, 0, 0, 40, 0, 0, 0, 30, 1, 0, 30, 1, 40, 30, 0, 40, 30, 0, 0)
+vertex_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+active_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_selected = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+active_edge = -1
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+face_material_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
+face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
+face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0429605, -0.00623362, 0.0270106)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yyttt")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67427, 0)
+script = ExtResource("1_s2on2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.896811, 0, 0.442414, 0, 1, 0, -0.442414, 0, 0.896811, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_so11r")
+surface_material_override/0 = SubResource("StandardMaterial3D_8b3ad")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("ConvexPolygonShape3D_58fdk")
+
+[node name="Neck" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598956, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
+environment = SubResource("Environment_ave0l")
+fov = 90.0
+
+[node name="HighCalibler" type="MeshInstance3D" parent="Player/Neck/Camera3D"]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.324122, -0.475299, -0.632003)
+layers = 3
+mesh = ExtResource("3_jb3s6")
+skeleton = NodePath("../../../..")
+
+[node name="Block_0" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, -0.993766, -35.027)
+script = SubResource("GDScript_fpsby")
+collision_type = 1
+block_data = SubResource("Resource_4k8m8")
+materials = Array[Material]([])
+collision_layer = 1
+collision_mask = 1
+
+[node name="Block_1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, 0.00623362, 3.97299)
+script = SubResource("GDScript_fpsby")
+collision_type = 1
+block_data = SubResource("Resource_lk2gv")
+materials = Array[Material]([])
+collision_layer = 1
+collision_mask = 1
+
+[node name="Block_2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, 0.00623362, -35.027)
+script = SubResource("GDScript_fpsby")
+collision_type = 1
+block_data = SubResource("Resource_dkoni")
+materials = Array[Material]([])
+collision_layer = 1
+collision_mask = 1
+
+[node name="Block_3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.043, 0.00623362, -35.027)
+script = SubResource("GDScript_fpsby")
+collision_type = 1
+block_data = SubResource("Resource_6uxyd")
+materials = Array[Material]([])
+collision_layer = 1
+collision_mask = 1
+
+[node name="Block_4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, 0.00623362, 3.97299)
+script = SubResource("GDScript_fpsby")
+collision_type = 1
+block_data = SubResource("Resource_nd333")
+materials = Array[Material]([])
+collision_layer = 1
+collision_mask = 1
+
+[node name="Block_5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.043, 17.0062, -35.027)
+script = SubResource("GDScript_fpsby")
+collision_type = 1
+block_data = SubResource("Resource_s2k5x")
+materials = Array[Material]([])
+collision_layer = 1
+collision_mask = 1
