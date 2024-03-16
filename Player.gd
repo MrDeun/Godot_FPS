@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 6.6
+const SPEED = 8.8
 const JUMP_VELOCITY = 10.0
 const MOUSE_SENSITIVITY = 0.01
 

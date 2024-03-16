@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dnm4ypqidmmgd"]
+
+[ext_resource type="Texture2D" uid="uid://bti4js2apjfrf" path="res://Textures/Floor/krita_floor.png" id="1_8626i"]
+[ext_resource type="Texture2D" uid="uid://dsmwtl6l0ps6f" path="res://Textures/Floor/krita_floor_n.png" id="2_mtxw8"]
+
+[resource]
+albedo_texture = ExtResource("1_8626i")
+normal_enabled = true
+normal_texture = ExtResource("2_mtxw8")

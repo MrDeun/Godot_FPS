@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://culq6cjt7h45h"
+path="res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh"
+
+[deps]
+
+files=["res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh"]
+
+source_file="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj"
+dest_files=["res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh", "res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -53,4 +53,4 @@ right={
 
 [physics]
 
-3d/default_gravity=17.6
+3d/default_gravity=30.0
