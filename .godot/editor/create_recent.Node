@@ -1,6 +1,7 @@
+Node3D
+OmniLight3D
 RigidBody3D
 CollisionShape3D
-Node3D
 CyclopsBlocks
 ImporterMeshInstance3D
 CSGBox3D
