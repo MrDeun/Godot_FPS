@@ -1,6 +1,5 @@
-extends OmniLight3D
+extends Node3D
 
-var rng = RandomNumberGenerator.new();
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,5 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	light_energy = (light_energy + rng.randf_range(0.7,1.3))/1.66
+	position.y += sin(delta)
+	rotation.x += delta
 	pass
