@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://pp1rlhqbj5d1"]
+
+[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="1_7p2lv"]
+
+[node name="Pistol" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.331678, 0)
+mesh = ExtResource("1_7p2lv")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)

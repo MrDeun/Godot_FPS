@@ -1,14 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710958762
+::res://::1711056223
 editor_cache.json::JSON::-1::1710958730::0::1::::<><>::
-FlickerLight.gd::GDScript::-1::1710958730::0::1::::<>OmniLight3D<>::
+FlickerLight.gd::GDScript::-1::1710960123::0::1::::<>OmniLight3D<>::
 icon.png::CompressedTexture2D::5682386384312682030::1708975058::1708975058::1::::<><>::
 icon.svg::CompressedTexture2D::3600379401366732446::1708975058::1710958765::1::::<><>::
 LightFlicker.gd::GDScript::-1::1710363827::0::1::::<>OmniLight3D<>::
-node_3d.tscn::PackedScene::2352762791481617871::1710958730::0::1::::<><>::res://Player.gd<>uid://culq6cjt7h45h::::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj<>res://addons/cyclops_level_builder/nodes/cyclops_block.gd<>res://addons/cyclops_level_builder/resources/convex_block_data.gd<>uid://scqbucq8c4tx::::res://Textures/WallBrick/new_standard_material_3d.tres<>uid://dnm4ypqidmmgd::::res://Textures/Floor/floor_material.tres<>res://FlickerLight.gd
-PickableMagnum.gd::GDScript::-1::1710958653::0::1::::<>MeshInstance3D<>::
+node_3d.tscn::PackedScene::2352762791481617871::1711056223::0::1::::<><>::res://Player.gd<>uid://pp1rlhqbj5d1::::res://pistol.tscn<>uid://culq6cjt7h45h::::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj<>res://addons/cyclops_level_builder/nodes/cyclops_block.gd<>res://addons/cyclops_level_builder/resources/convex_block_data.gd<>uid://scqbucq8c4tx::::res://Textures/WallBrick/new_standard_material_3d.tres<>uid://dnm4ypqidmmgd::::res://Textures/Floor/floor_material.tres<>res://FlickerLight.gd<>res://PickableMagnum.gd
+PickableMagnum.gd::GDScript::-1::1710960023::0::1::::<>MeshInstance3D<>::
 Player.gd::GDScript::-1::1710958730::0::1::::<>CharacterBody3D<>::
 README.md::TextFile::-1::1708975058::0::1::::<><>::
+pistol.tscn::PackedScene::1085407910488867856::1711056223::0::1::::<><>::uid://culq6cjt7h45h::::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj
 ::res://addons/::1710091405
 ::res://addons/addons/::1710091405
 ::res://addons/addons/kenney_prototype_textures/::1710091405
@@ -228,7 +229,7 @@ line_editor_int.tscn::PackedScene::7714914202562798956::1702495392::0::1::::<><>
 resource_inspector.gd::GDScript::-1::1684427256::0::1::::ResourceInspector<>Control<>::
 resource_inspector.tscn::PackedScene::6729863528294998586::1702495392::0::1::::<><>::res://addons/cyclops_level_builder/controls/resource_inspector/resource_inspector.gd
 ::res://addons/cyclops_level_builder/data/::1709897403
-configuration.tres::Resource/CyclopsConfig::4552822160491332919::1709897403::0::1::::<><>::res://addons/cyclops_level_builder/resources/cyclops_config.gd<>uid://dwxpsgoxb60yp::::res://addons/cyclops_level_builder/data/snapping_tags/snap_tag_grid.tres<>uid://rskdanqaqt1y::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_move.tres<>uid://beqrq2vlgidpe::::res://addons/cyclops_level_builder/data/snapping_tags/snap_tag_vertex.tres<>uid://c648hs1r46mat::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_block.tres<>uid://cihxgriu32oxb::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_prism.tres<>uid://p0ucaj6w232i::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_rotate.tres<>uid://wm5lu7jdndym::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_cylinder.tres<>uid://16f1nwimgn0p::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_stairs.tres<>uid://buod6sdg7c12l::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_clip.tres<>uid://ctj35x0jfg7ej::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_edit_vertex.tres<>uid://dub6oyal5fxly::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_edit_edge.tres<>uid://cmdgd8wmfdo4a::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_edit_face.tres<>uid://bjmuechy70058::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_material_brush.tres
+configuration.tres::Resource/Resource::4552822160491332919::1709897403::0::1::::<><>::res://addons/cyclops_level_builder/resources/cyclops_config.gd<>uid://dwxpsgoxb60yp::::res://addons/cyclops_level_builder/data/snapping_tags/snap_tag_grid.tres<>uid://rskdanqaqt1y::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_move.tres<>uid://beqrq2vlgidpe::::res://addons/cyclops_level_builder/data/snapping_tags/snap_tag_vertex.tres<>uid://c648hs1r46mat::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_block.tres<>uid://cihxgriu32oxb::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_prism.tres<>uid://p0ucaj6w232i::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_rotate.tres<>uid://wm5lu7jdndym::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_cylinder.tres<>uid://16f1nwimgn0p::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_create_stairs.tres<>uid://buod6sdg7c12l::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_clip.tres<>uid://ctj35x0jfg7ej::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_edit_vertex.tres<>uid://dub6oyal5fxly::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_edit_edge.tres<>uid://cmdgd8wmfdo4a::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_edit_face.tres<>uid://bjmuechy70058::::res://addons/cyclops_level_builder/data/tool_tags/tool_tag_material_brush.tres
 ::res://addons/cyclops_level_builder/data/snapping_tags/::1709896927
 snap_tag_grid.tres::Resource/Resource::8751840536456137483::1702497484::0::1::::<><>::res://addons/cyclops_level_builder/snapping/snapping_tag.gd<>uid://c6mucdu7wcbkm::::res://addons/cyclops_level_builder/art/icons/snap_grid.svg<>res://addons/cyclops_level_builder/snapping/snapping_system_grid.gd
 snap_tag_vertex.tres::Resource/Resource::2701268314969167950::1702497484::0::1::::<><>::res://addons/cyclops_level_builder/snapping/snapping_tag.gd<>uid://c0x011okomj8n::::res://addons/cyclops_level_builder/art/icons/snap_vertex.svg<>res://addons/cyclops_level_builder/snapping/snapping_system_vertex.gd
@@ -256,7 +257,7 @@ convex_face_editor_viewport.tscn::PackedScene::4005176058401051432::1709897403::
 ::res://addons/cyclops_level_builder/docks/cyclops_console/::1709897403
 cyclops_console.gd::GDScript::-1::1704284480::0::1::::CyclopsConsole<>Control<>::
 cyclops_console.tscn::PackedScene::143352357671028003::1709897403::0::1::::<><>::res://addons/cyclops_level_builder/docks/cyclops_console/cyclops_console.gd<>uid://cphtpklx81l3w::::res://addons/cyclops_level_builder/controls/vector3_edit.tscn
-::res://addons/cyclops_level_builder/docks/material_palette/::1710958450
+::res://addons/cyclops_level_builder/docks/material_palette/::1711038861
 material_palette_viewport.gd::GDScript::-1::1684427256::0::1::::MaterialPaletteViewport<>Control<>::
 material_palette_viewport.tscn::PackedScene::1036570676893576714::1704346782::0::1::::<><>::res://addons/cyclops_level_builder/docks/material_palette/material_palette_viewport.gd<>res://addons/cyclops_level_builder/docks/material_palette/thumbnail_group.gd
 material_snapshot.gd::GDScript::-1::1684427256::0::1::::MaterialShapshot<>SubViewport<>::
@@ -264,8 +265,8 @@ material_snapshot.tscn::PackedScene::8971473366283704766::1709897403::0::1::::<>
 material_thumbnail.gd::GDScript::-1::1691303924::0::1::::MaterialThumbnail<>Control<>::
 material_thumbnail.tscn::PackedScene::7310861943008900834::1709897403::0::1::::<><>::res://addons/cyclops_level_builder/docks/material_palette/material_thumbnail.gd<>uid://c0gpl22e2g6ay::::res://addons/cyclops_level_builder/docks/material_palette/thumbnail_selected_theme.tres<>uid://bx26luxdhj3jq::::res://addons/cyclops_level_builder/docks/material_palette/thumbnail_normal_theme.tres
 thumbnail_group.gd::GDScript::-1::1684427256::0::1::::ThumbnailGroup<>Resource<>::
-thumbnail_normal_theme.tres::Theme::4058405243379725578::1710958450::0::1::::<><>::
-thumbnail_selected_theme.tres::Theme::6540880583544088756::1710958450::0::1::::<><>::
+thumbnail_normal_theme.tres::Theme::4058405243379725578::1711038861::0::1::::<><>::
+thumbnail_selected_theme.tres::Theme::6540880583544088756::1711038861::0::1::::<><>::
 ::res://addons/cyclops_level_builder/docks/material_palette/commands/::1709896928
 cmd_mat_dock_add_materials.gd::GDScript::-1::1684427256::0::1::::CommandMaterialDockAddMaterials<>CyclopsCommand<>::
 cmd_mat_dock_remove_materials.gd::GDScript::-1::1684427256::0::1::::CommandMaterialDockRemoveMaterials<>CyclopsCommand<>::
@@ -337,8 +338,8 @@ block_data.gd::GDScript::-1::1684427256::0::1::::BlockData<>Resource<>::
 convex_block_data.gd::GDScript::-1::1691292612::0::1::::ConvexBlockData<>Resource<>::
 cyclops_config.gd::GDScript::-1::1702497486::0::1::::CyclopsConfig<>Resource<>::
 tool_tag.gd::GDScript::-1::1684427256::0::1::::ToolTag<>Resource<>::
-::res://addons/cyclops_level_builder/shaders/::1710958450
-outline_shader.tres::VisualShader::4976330123338311102::1710958450::0::1::::<><>::
+::res://addons/cyclops_level_builder/shaders/::1711038861
+outline_shader.tres::VisualShader::4976330123338311102::1711038861::0::1::::<><>::
 tool_outline_shader.tres::VisualShader::6796597932207006307::1684427256::0::1::::<><>::
 vertex_shader.tres::Shader::7485550559320119999::1704768920::0::1::::<><>::
 ::res://addons/cyclops_level_builder/snapping/::1709897403
@@ -405,14 +406,14 @@ plugin.cfg::TextFile::-1::1708975058::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1708975058::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1708975058
 ::res://addons/godot-git-plugin/macos/::1708975058
-::res://addons/godot-git-plugin/win64/::1710958755
+::res://addons/godot-git-plugin/win64/::1711038836
 ::res://Concept/::1710191864
 GameDesignDoc.md::TextFile::-1::1709496073::0::1::::<><>::
 Untitled board(1).png::CompressedTexture2D::4396170954295550165::1710189845::1710191864::1::::<><>::
 Untitled board.png::CompressedTexture2D::7611174042128973671::1709496073::1709580680::1::::<><>::
 ::res://models/::1710958730
 ::res://models/PSXPistolPack[FIXED]/::1710958730
-::res://models/PSXPistolPack[FIXED]/Files/::1710958730
+::res://models/PSXPistolPack[FIXED]/Files/::1710958765
 Pistols-6abf26a125e11f68f8cf445bdcc8ad30_9mm.jpg::CompressedTexture2D::7802167211899799044::1710958730::1710958730::1::::<><>::
 Pistols-6abf26a125e11f68f8cf445bdcc8ad30_9mm_3.jpg::CompressedTexture2D::7856580485326927301::1710958730::1710958730::1::::<><>::
 Pistols-6abf26a125e11f68f8cf445bdcc8ad30_BarettaMag.jpg::CompressedTexture2D::5469379137833711099::1710958730::1710958730::1::::<><>::
@@ -435,7 +436,7 @@ Pistols-877d2c0485357a789b4de4fef0c17fac_USP_mag_Text.jpg::CompressedTexture2D::
 Pistols-877d2c0485357a789b4de4fef0c17fac_USP_Text.jpg::CompressedTexture2D::6754361262623729982::1710958730::1710958730::1::::<><>::
 Pistols.fbx::PackedScene::7355323456472967716::1710958730::1710958730::1::::<><>::
 Pistols.obj::Mesh::1182996198531457660::1710958730::1710958765::1::::<><>::uid://6k6sr3f0t5qr::::res://models/PSXPistolPack[FIXED]/Files/Glock 17/Textures/glockText.jpg<>uid://bfl4hufb83jwc::::res://models/PSXPistolPack[FIXED]/Files/Glock 17/Textures/GLOCK_MAG_text.jpg<>uid://b1opyk3o6rjgr::::res://models/PSXPistolPack[FIXED]/Files/Glock 17/Textures/9mm.jpg<>uid://b8uh44onyrmso::::res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/9mm.jpg<>uid://cry0gus51qlbg::::res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/BarettaText.jpg<>uid://dp05lk61duxom::::res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/BarettaMag.jpg<>uid://duskntc6owjkk::::res://models/PSXPistolPack[FIXED]/Files/USP/Textures/USP_Text.jpg<>uid://wxix3doj2f05::::res://models/PSXPistolPack[FIXED]/Files/USP/Textures/USP_mag_Text.jpg<>uid://cn1ad7wup3cxg::::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/Textures/HighCaliblerPistolText.jpg<>uid://butcin20nu1yd::::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/Textures/HighCaliblerMag.jpg
-::res://models/PSXPistolPack[FIXED]/Files/Baretta9M/::1710958730
+::res://models/PSXPistolPack[FIXED]/Files/Baretta9M/::1710958766
 Baretta9M-6c66ea7a7d0927de08372e01dee37198_9mm.jpg::CompressedTexture2D::7505168922971694844::1710958730::1710958730::1::::<><>::
 Baretta9M-6c66ea7a7d0927de08372e01dee37198_BarettaMag.jpg::CompressedTexture2D::6580538018700362860::1710958730::1710958730::1::::<><>::
 Baretta9M-6c66ea7a7d0927de08372e01dee37198_BarettaText.jpg::CompressedTexture2D::2922558620014051325::1710958730::1710958730::1::::<><>::
@@ -451,7 +452,7 @@ BarettaFrontRef.png::CompressedTexture2D::2737377897447381148::1710958730::17109
 BarettaMag.jpg::CompressedTexture2D::8265545877325812628::1710958730::1710958730::1::::<><>::
 BarettaRef.jpg::CompressedTexture2D::640881976969488490::1710958730::1710958730::1::::<><>::
 BarettaText.jpg::CompressedTexture2D::6017126494584709684::1710958730::1710958730::1::::<><>::
-::res://models/PSXPistolPack[FIXED]/Files/Glock 17/::1710958730
+::res://models/PSXPistolPack[FIXED]/Files/Glock 17/::1710958765
 Glock17-9b2b4a066befe44be51071c228e3b81c_9mm.jpg::CompressedTexture2D::1508932829199534552::1710958730::1710958730::1::::<><>::
 Glock17-9b2b4a066befe44be51071c228e3b81c_glockText.jpg::CompressedTexture2D::1176359296823145005::1710958730::1710958730::1::::<><>::
 Glock17-9b2b4a066befe44be51071c228e3b81c_GLOCK_MAG_text.jpg::CompressedTexture2D::5563686154333301047::1710958730::1710958730::1::::<><>::
@@ -471,7 +472,7 @@ Glock_Front_Veiw.png::CompressedTexture2D::4149778768630796813::1710958730::1710
 GLOCK_MAGAZINE.jpg::CompressedTexture2D::4648095297575596538::1710958730::1710958730::1::::<><>::
 GLOCK_MAGAZINE_SIDE.jpg::CompressedTexture2D::5293274884157958297::1710958730::1710958730::1::::<><>::
 GLOCK_MAG_text.jpg::CompressedTexture2D::2761847408807153378::1710958730::1710958730::1::::<><>::
-::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/::1710958730
+::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/::1710958765
 HighCalibler-bc4960e2fa57642ce49ae829c08a84fe_HighCaliblerMag.jpg::CompressedTexture2D::7796862085894571182::1710958730::1710958730::1::::<><>::
 HighCalibler-bc4960e2fa57642ce49ae829c08a84fe_HighCaliblerPistolText.jpg::CompressedTexture2D::7980521106286520415::1710958730::1710958730::1::::<><>::
 HighCalibler-f5003e37f63c71c2b2ee3406b4838f9b_HighCaliblerMag.jpg::CompressedTexture2D::9151834088736330418::1710958730::1710958730::1::::<><>::
@@ -482,7 +483,7 @@ HighCalibler.obj::Mesh::6200353346793108047::1710958730::1710958765::1::::<><>::
 HighCaliblerMag.jpg::CompressedTexture2D::3829557179785002603::1710958730::1710958730::1::::<><>::
 HighCaliblerPistol.jpg::CompressedTexture2D::4730709340738149253::1710958730::1710958730::1::::<><>::
 HighCaliblerPistolText.jpg::CompressedTexture2D::5738977229330650860::1710958730::1710958730::1::::<><>::
-::res://models/PSXPistolPack[FIXED]/Files/USP/::1710958730
+::res://models/PSXPistolPack[FIXED]/Files/USP/::1710958765
 USP-bc117dd1e22eeaaf087b2c787c0c505f_USP_mag_Text.jpg::CompressedTexture2D::4074339529527862866::1710958730::1710958730::1::::<><>::
 USP-bc117dd1e22eeaaf087b2c787c0c505f_USP_Text.jpg::CompressedTexture2D::6518998617047680343::1710958730::1710958730::1::::<><>::
 USP-ceedd26ef8146770657afd4f233a3e37_USP_mag_Text.jpg::CompressedTexture2D::972551352004949170::1710958730::1710958730::1::::<><>::
@@ -511,11 +512,13 @@ USP.png::CompressedTexture2D::1794596969017155807::1710958730::1710958730::1::::
 ::res://PSXPistolPack[FIXED]/Files/HighCalibler/::1710958730
 PickablePistol.gd::GDScript::-1::1710958462::0::1::::<>Node3D<>::
 ::res://Textures/::1710958730
-::res://Textures/Floor/::1710958730
-floor_material.tres::StandardMaterial3D::8098294016201487375::1710958730::0::1::::<><>::uid://bti4js2apjfrf::::res://Textures/Floor/krita_floor.png<>uid://dsmwtl6l0ps6f::::res://Textures/Floor/krita_floor_n.png
+::res://Textures/Floor/::1711038861
+floor_material.tres::StandardMaterial3D::8098294016201487375::1711038861::0::1::::<><>::uid://bti4js2apjfrf::::res://Textures/Floor/krita_floor.png<>uid://dsmwtl6l0ps6f::::res://Textures/Floor/krita_floor_n.png
 krita_floor.png::CompressedTexture2D::3738301586933993043::1710958730::1710958730::1::::<><>::
 krita_floor_n.png::CompressedTexture2D::8448804099717256595::1710958730::1710958730::1::::<><>::
-::res://Textures/WallBrick/::1710958730
+::res://Textures/WallBrick/::1711057024
+alt_brickjpg.jpg::CompressedTexture2D::5590658303789913072::1711056604::1711057090::1::::<><>::
+alt_brickjpg_n.jpg::CompressedTexture2D::7363419162360613012::1711057024::1711057075::1::::<><>::
 krita_wall.png::CompressedTexture2D::544160613478360102::1710958730::1710958730::1::::<><>::
 krita_wall_n.png::CompressedTexture2D::6887421756810488059::1710958730::1710958730::1::::<><>::
-new_standard_material_3d.tres::StandardMaterial3D::1268502252998661169::1710958730::0::1::::<><>::uid://0wnsfu0mlmi6::::res://Textures/WallBrick/default_sandstone_brick.png<>uid://h0uime75p73w::::res://Textures/WallBrick/krita_wall.png<>uid://c5ek3htcdlw56::::res://Textures/WallBrick/krita_wall_n.png
+new_standard_material_3d.tres::StandardMaterial3D::1268502252998661169::1711038861::0::1::::<><>::uid://0wnsfu0mlmi6::::res://Textures/WallBrick/default_sandstone_brick.png<>uid://h0uime75p73w::::res://Textures/WallBrick/krita_wall.png<>uid://c5ek3htcdlw56::::res://Textures/WallBrick/krita_wall_n.png
