@@ -2525,7 +2525,7 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="Resource" id="Resource_atgyn"]
+[sub_resource type="Resource" id="Resource_g6ihe"]
 script = ExtResource("4_lp3id")
 selected = false
 active = false
@@ -2549,7 +2549,7 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="Resource" id="Resource_a7dou"]
+[sub_resource type="Resource" id="Resource_75ga2"]
 script = ExtResource("4_lp3id")
 selected = false
 active = false
@@ -2573,7 +2573,7 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="Resource" id="Resource_bvvt5"]
+[sub_resource type="Resource" id="Resource_k8v4p"]
 script = ExtResource("4_lp3id")
 selected = false
 active = false
@@ -2597,7 +2597,7 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="Resource" id="Resource_7tprc"]
+[sub_resource type="Resource" id="Resource_v2xy1"]
 script = ExtResource("4_lp3id")
 selected = false
 active = false
@@ -2621,7 +2621,7 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="Resource" id="Resource_xdqoh"]
+[sub_resource type="Resource" id="Resource_mx7su"]
 script = ExtResource("4_lp3id")
 selected = false
 active = false
@@ -2775,7 +2775,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.14695, -0.713669, 4.43333)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Room1/Wall_3/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62459, 13.7196, -5.80991)
-light_color = Color(1, 0.517647, 0.286275, 1)
+light_color = Color(1, 0.709804, 0.286275, 1)
 omni_range = 9.47405
 script = ExtResource("7_agybe")
 
@@ -3432,34 +3432,34 @@ materials = Array[Material]([ExtResource("5_nk004")])
 [node name="Block_15" type="Node3D" parent="Room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.043, 9.00623, 22.8938)
 script = ExtResource("3_y5u5k")
-block_data = SubResource("Resource_atgyn")
-materials = Array[Material]([ExtResource("6_0unwe")])
+block_data = SubResource("Resource_g6ihe")
+materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="LittlePool" type="Node3D" parent="Room2"]
 
 [node name="Block_11" type="Node3D" parent="Room2/LittlePool"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.043, 9.00623, 13.8938)
 script = ExtResource("3_y5u5k")
-block_data = SubResource("Resource_a7dou")
-materials = Array[Material]([ExtResource("6_0unwe")])
+block_data = SubResource("Resource_75ga2")
+materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="Block_12" type="Node3D" parent="Room2/LittlePool"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.043, 9.00623, -0.10617)
 script = ExtResource("3_y5u5k")
-block_data = SubResource("Resource_bvvt5")
-materials = Array[Material]([ExtResource("6_0unwe")])
+block_data = SubResource("Resource_k8v4p")
+materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="Block_13" type="Node3D" parent="Room2/LittlePool"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.043, 9.00623, -0.10617)
 script = ExtResource("3_y5u5k")
-block_data = SubResource("Resource_7tprc")
-materials = Array[Material]([ExtResource("6_0unwe")])
+block_data = SubResource("Resource_v2xy1")
+materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="Block_14" type="Node3D" parent="Room2/LittlePool"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.043, 9.00623, 0.89383)
 script = ExtResource("3_y5u5k")
-block_data = SubResource("Resource_xdqoh")
-materials = Array[Material]([ExtResource("6_0unwe")])
+block_data = SubResource("Resource_mx7su")
+materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="Floor2" type="Node3D" parent="Room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.043, 8.00623, 0.89383)

@@ -4,5 +4,5 @@ res://addons/cyclops_level_builder/docks/material_palette/thumbnail_selected_the
 res://addons/cyclops_level_builder/docks/material_palette/thumbnail_normal_theme.tres
 res://Textures/WallBrick/new_standard_material_3d.tres
 res://Textures/Floor/floor_material.tres
-res://pistol.tscn
 res://FlickerLight.gd
+res://pistol.tscn
