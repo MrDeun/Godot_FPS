@@ -15,6 +15,12 @@ var t_bob = 0.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
 @onready var neck_camera := $Neck/Camera3D
+@onready var pistol_anim := $Neck/Camera3D/Pistol/AnimationPlayer
+
+func _pistol_fire():
+	if !pistol_anim.is_playing():
+		pistol_anim.play("Fire")
+		
 
 func _unhandled_input(event) -> void:
 	# Check Mouse Input
@@ -25,10 +31,12 @@ func _unhandled_input(event) -> void:
 	
 	# Change camera rotation
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		print(event)
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 			neck_camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 			neck_camera.rotation.x = clamp(neck_camera.rotation.x,deg_to_rad(-60),deg_to_rad(60))
+		
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -53,6 +61,10 @@ func _physics_process(delta):
 	#Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	neck_camera.transform.origin = _headbob(t_bob)
+	
+	if Input.is_action_just_pressed("shoot"):
+		_pistol_fire()
+			
 	move_and_slide()
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO;
