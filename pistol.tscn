@@ -2,6 +2,25 @@
 
 [ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="1_7p2lv"]
 
+[sub_resource type="Animation" id="Animation_fbap6"]
+resource_name = "Fire"
+length = 0.75
+step = 0.05
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 0.1, 1, -0.7, -1.66, 0, 0.2, 1, -0.7, -1.33, 0, 0.55, 1, 0, -1.66, 0, 0.75, 1, 0, -1.66, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0, 1, 0.2, 1, 0, 0, 0.259, 0.966, 0.55, 1, 0, 0, -0.044, 0.999, 0.75, 1, 0, 0, 0, 0.966)
+
 [sub_resource type="Animation" id="Animation_mbmhn"]
 resource_name = "Idle"
 length = 5.0
@@ -31,25 +50,6 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, -0.087, -0.026, -0.002, 0.996, 0.75, 1, 0.087, 0.026, -0.002, 0.996, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_fbap6"]
-resource_name = "Fire"
-length = 0.75
-step = 0.05
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 0.1, 1, -0.7, -1.66, 0, 0.2, 1, -0.7, -1.33, 0, 0.55, 1, 0, -1.66, 0, 0.75, 1, 0, -1.66, 0)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0, 1, 0.2, 1, 0, 0, 0.259, 0.966, 0.55, 1, 0, 0, -0.044, 0.999, 0.75, 1, 0, 0, 0, 0.966)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sxkh1"]
 _data = {
 "Fire": SubResource("Animation_fbap6"),
@@ -62,10 +62,6 @@ _data = {
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.66, 0)
 mesh = ExtResource("1_7p2lv")
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 0, 0, 0)
-target_position = Vector3(0, 0, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

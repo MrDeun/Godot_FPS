@@ -13,10 +13,10 @@
 
 [sub_resource type="Environment" id="Environment_yyttt"]
 ambient_light_color = Color(0.309804, 0.501961, 0.607843, 1)
+ambient_light_energy = 0.79
 fog_light_color = Color(0.227451, 0.341176, 0.180392, 1)
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0165
-volumetric_fog_albedo = Color(1, 0.513726, 0, 1)
+volumetric_fog_density = 0.0495
 volumetric_fog_emission_energy = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_so11r"]
@@ -2695,11 +2695,13 @@ shape = SubResource("ConvexPolygonShape3D_58fdk")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.598956, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000281155, 0, 0.00063324)
 fov = 90.0
 
 [node name="Pistol" parent="Player/Neck/Camera3D" instance=ExtResource("2_b5jm4")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.25, -0.2, -0.5)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
 [node name="Pathway" type="Node3D" parent="."]
 
@@ -2745,19 +2747,19 @@ materials = Array[Material]([ExtResource("5_nk004")])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.043, -1.00623, 7.02701)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Room1/Wall_1/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63148, 14.5562, -4.95651)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63148, 14.5562, -4.59387)
 light_color = Color(1, 0.709804, 0.286275, 1)
 omni_range = 9.47405
 script = ExtResource("7_agybe")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Room1/Wall_1/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4837, 14.6111, -4.95397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4837, 14.6111, -4.38006)
 light_color = Color(1, 0.709804, 0.286275, 1)
 omni_range = 9.47405
 script = ExtResource("7_agybe")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Room1/Wall_1/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8918, 14.1456, -5.16029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8918, 14.1456, -4.62473)
 light_color = Color(1, 0.709804, 0.286275, 1)
 omni_range = 9.47405
 script = ExtResource("7_agybe")
@@ -2790,7 +2792,7 @@ omni_range = 9.47405
 script = ExtResource("7_agybe")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Room1/Wall_3/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4099, 13.6583, -5.3264)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4099, 13.6583, -6.04539)
 light_color = Color(1, 0.709804, 0.286275, 1)
 omni_range = 9.47405
 script = ExtResource("7_agybe")
@@ -3354,7 +3356,7 @@ block_data = SubResource("Resource_wkfy4")
 materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Room2/Block_4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46793, 5.31135, -2.86021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22733, 5.31135, -2.86021)
 light_color = Color(1, 0.709804, 0.286275, 1)
 script = ExtResource("7_agybe")
 
@@ -3389,7 +3391,7 @@ light_color = Color(1, 0.709804, 0.286275, 1)
 script = ExtResource("7_agybe")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Room2/Block_4/OmniLight3D/OmniLight3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32532, -0.232916, -15.7121)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1823, -0.232916, -15.7121)
 light_color = Color(1, 0.709804, 0.286275, 1)
 script = ExtResource("7_agybe")
 
@@ -3478,9 +3480,12 @@ script = ExtResource("8_oqqvk")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00317649, 0.999995, 0, -0.999995, -0.00317649, 0, 16.2815, 5.92697)
-light_color = Color(0.87451, 0.788235, 0, 1)
+light_color = Color(1, 0.862745, 0.52549, 1)
+light_energy = 0.15
+light_indirect_energy = 3.337
+light_volumetric_fog_energy = 5.096
 shadow_enabled = true
-shadow_bias = 1.06
+shadow_bias = 0.2
 shadow_normal_bias = 0.44
 shadow_opacity = 0.8
 shadow_blur = 1.59

@@ -7,5 +7,3 @@ res://Textures/Floor/floor_material.tres
 res://pistol.tscn
 res://Player.gd
 res://level01.gd
-res://PickableMagnum.gd
-res://LightFlicker.gd

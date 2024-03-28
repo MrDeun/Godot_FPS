@@ -31,7 +31,6 @@ func _unhandled_input(event) -> void:
 	
 	# Change camera rotation
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		print(event)
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 			neck_camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
@@ -62,7 +61,7 @@ func _physics_process(delta):
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	neck_camera.transform.origin = _headbob(t_bob)
 	
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		_pistol_fire()
 			
 	move_and_slide()
