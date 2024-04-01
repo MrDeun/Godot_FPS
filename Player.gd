@@ -1,6 +1,11 @@
 extends CharacterBody3D
 
+#Players data
+var Armor = 0.0
+var Health = 100.0
 
+
+# Movement Constants
 const SPEED = 8.8
 const JUMP_VELOCITY = 10.0
 const MOUSE_SENSITIVITY = 0.01
@@ -14,13 +19,22 @@ var t_bob = 0.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
-@onready var neck_camera := $Neck/Camera3D
-@onready var pistol_anim := $Neck/Camera3D/Pistol/AnimationPlayer
+@onready var neck_camera := $Neck/PlayerCamera
+@onready var gun_raycast := $Neck/PlayerCamera/Crosshair_raycast
+@onready var sphere_collision := $"../HighCalibler/Sphere"
+@onready var pistol := $Neck/PlayerCamera/Pistol
+@onready var ammo_count := $Neck/PlayerCamera/HUD/Ammo/HBoxContainer
 
 func _pistol_fire():
-	if !pistol_anim.is_playing():
-		pistol_anim.play("Fire")
-		
+	var fire_success: bool = pistol.shoot()
+	if gun_raycast.is_colliding() and fire_success:
+		var target = gun_raycast.get_collider()
+		ammo_count.give_shake()
+		print(target.name)
+		if target.name == sphere_collision.name:
+			target.green_buln.got_hit()
+			
+			
 
 func _unhandled_input(event) -> void:
 	# Check Mouse Input
@@ -63,7 +77,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("shoot"):
 		_pistol_fire()
-			
+	if Input.is_action_pressed("reload"):
+		pistol.reload()
+				
 	move_and_slide()
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO;

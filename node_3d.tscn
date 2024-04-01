@@ -1,15 +1,24 @@
-[gd_scene load_steps=126 format=3 uid="uid://8rxwokly5ikl"]
+[gd_scene load_steps=136 format=3 uid="uid://8rxwokly5ikl"]
 
-[ext_resource type="Script" path="res://level01.gd" id="1_dcqy8"]
-[ext_resource type="Script" path="res://Player.gd" id="1_s2on2"]
-[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://pistol.tscn" id="2_b5jm4"]
+[ext_resource type="Script" path="res://Player.gd" id="1_7tcxf"]
+[ext_resource type="Script" path="res://Camera3D.gd" id="2_dfl5a"]
+[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://pistol.tscn" id="3_06cd4"]
 [ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="3_y5u5k"]
+[ext_resource type="Script" path="res://box_shaker.gd" id="4_6lwpj"]
+[ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="4_84y0a"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_lp3id"]
+[ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://Textures/fonts/e1234/E1234.ttf" id="4_ls2bh"]
+[ext_resource type="Script" path="res://Label.gd" id="4_uwn47"]
 [ext_resource type="Material" uid="uid://scqbucq8c4tx" path="res://Textures/WallBrick/new_standard_material_3d.tres" id="5_nk004"]
+[ext_resource type="Texture2D" uid="uid://b1ps083iebcoa" path="res://Textures/Sci-Fi Game Icons/Black/slice15.svg" id="5_xer3r"]
 [ext_resource type="Material" uid="uid://dnm4ypqidmmgd" path="res://Textures/Floor/floor_material.tres" id="6_0unwe"]
+[ext_resource type="Texture2D" uid="uid://bhghlj8n8bhmv" path="res://Textures/Sci-Fi Game Icons/Black/slice16.svg" id="6_qu0ep"]
 [ext_resource type="Script" path="res://FlickerLight.gd" id="7_agybe"]
 [ext_resource type="Script" path="res://PickableMagnum.gd" id="8_oqqvk"]
+[ext_resource type="Script" path="res://OmniLight3D.gd" id="12_1avoh"]
+[ext_resource type="Script" path="res://Sphere.gd" id="12_2h4xq"]
+[ext_resource type="Script" path="res://Collision.gd" id="12_jcrge"]
 
 [sub_resource type="Environment" id="Environment_yyttt"]
 ambient_light_color = Color(0.309804, 0.501961, 0.607843, 1)
@@ -29,6 +38,14 @@ albedo_color = Color(0.321569, 0.415686, 0.388235, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_58fdk"]
 points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxat7"]
+line_spacing = 1.0
+font = ExtResource("4_ls2bh")
+font_size = 150
+font_color = Color(0, 0.705882, 0, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Resource" id="Resource_q2von"]
 script = ExtResource("4_lp3id")
@@ -2406,7 +2423,7 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="Resource" id="Resource_ghmpn"]
+[sub_resource type="Resource" id="Resource_xhasx"]
 script = ExtResource("4_lp3id")
 selected = false
 active = false
@@ -2426,8 +2443,8 @@ face_material_indices = PackedInt32Array(0, 0, 0, 0, 0, 0)
 face_uv_transform = Array[Transform2D]([Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
 face_visible = PackedByteArray(1, 1, 1, 1, 1, 1)
 face_color = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-face_selected = PackedByteArray(1, 1, 1, 1, 1, 1)
-active_face = 0
+face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
+active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
 [sub_resource type="Resource" id="Resource_2ln48"]
@@ -2670,18 +2687,19 @@ face_selected = PackedByteArray(0, 0, 0, 0, 0, 0)
 active_face = -1
 face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ldr2l"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ckobr"]
+radius = 0.446351
 
 [node name="level01" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0429605, -0.00623362, -6.89383)
-script = ExtResource("1_dcqy8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yyttt")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7739, 6.55253, 7.07304)
-script = ExtResource("1_s2on2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2369, 6.58185, 6.82124)
+platform_floor_layers = 4294967293
+script = ExtResource("1_7tcxf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(0.896811, 0, 0.442414, 0, 1, 0, -0.442414, 0, 0.896811, 0, 0, 0)
@@ -2694,14 +2712,97 @@ shape = SubResource("ConvexPolygonShape3D_58fdk")
 [node name="Neck" type="Node3D" parent="Player"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.598956, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
+[node name="PlayerCamera" type="Camera3D" parent="Player/Neck"]
 fov = 90.0
+script = ExtResource("2_dfl5a")
 
-[node name="Pistol" parent="Player/Neck/Camera3D" instance=ExtResource("2_b5jm4")]
+[node name="Crooshair_texture" type="TextureRect" parent="Player/Neck/PlayerCamera"]
+modulate = Color(0, 0.607843, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_84y0a")
+
+[node name="HUD" type="Control" parent="Player/Neck/PlayerCamera"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Ammo" type="Control" parent="Player/Neck/PlayerCamera/HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/Neck/PlayerCamera/HUD/Ammo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1000.0
+offset_top = 520.0
+offset_right = 1313.0
+offset_bottom = 692.0
+grow_vertical = 0
+scale = Vector2(0.385, 0.385)
+script = ExtResource("4_6lwpj")
+
+[node name="Label" type="Label" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
+layout_mode = 2
+text = "8"
+label_settings = SubResource("LabelSettings_rxat7")
+script = ExtResource("4_uwn47")
+
+[node name="TextureRect" type="TextureRect" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_xer3r")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Health" type="Control" parent="Player/Neck/PlayerCamera/HUD"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/Neck/PlayerCamera/HUD/Health"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 508.0
+offset_right = 725.0
+offset_bottom = 748.0
+grow_vertical = 0
+scale = Vector2(0.385, 0.385)
+
+[node name="TextureRect" type="TextureRect" parent="Player/Neck/PlayerCamera/HUD/Health/HBoxContainer"]
+modulate = Color(0, 0.705882, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("6_qu0ep")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Player/Neck/PlayerCamera/HUD/Health/HBoxContainer"]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_rxat7")
+
+[node name="Pistol" parent="Player/Neck/PlayerCamera" instance=ExtResource("3_06cd4")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.25, -0.2, -0.5)
 
-[node name="RayCast3D" type="RayCast3D" parent="Player/Neck/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="Crosshair_raycast" type="RayCast3D" parent="Player/Neck/PlayerCamera"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
 
 [node name="Pathway" type="Node3D" parent="."]
 
@@ -3408,7 +3509,7 @@ script = ExtResource("7_agybe")
 [node name="Block_5" type="Node3D" parent="Room2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.043, 9.00623, -16.1062)
 script = ExtResource("3_y5u5k")
-block_data = SubResource("Resource_ghmpn")
+block_data = SubResource("Resource_xhasx")
 materials = Array[Material]([ExtResource("5_nk004")])
 
 [node name="Block_6" type="Node3D" parent="Room2"]
@@ -3475,36 +3576,34 @@ materials = Array[Material]([ExtResource("6_0unwe")])
 
 [node name="HighCalibler" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18.7741, 9.80087, -10.4033)
+layers = 3
 mesh = ExtResource("3_jb3s6")
 script = ExtResource("8_oqqvk")
+
+[node name="Sphere" type="StaticBody3D" parent="HighCalibler"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("12_2h4xq")
+
+[node name="Collision" type="CollisionShape3D" parent="HighCalibler/Sphere"]
+shape = SubResource("SphereShape3D_ckobr")
+script = ExtResource("12_jcrge")
+
+[node name="Green_Bulb" type="OmniLight3D" parent="HighCalibler/Sphere"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.0
+script = ExtResource("12_1avoh")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00317649, 0.999995, 0, -0.999995, -0.00317649, 0, 16.2815, 5.92697)
 light_color = Color(1, 0.862745, 0.52549, 1)
 light_energy = 0.15
 light_indirect_energy = 3.337
-light_volumetric_fog_energy = 5.096
+light_volumetric_fog_energy = 3.2
 shadow_enabled = true
 shadow_bias = 0.2
 shadow_normal_bias = 0.44
 shadow_opacity = 0.8
 shadow_blur = 1.59
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-material = SubResource("CanvasItemMaterial_ldr2l")
-layout_mode = 0
-offset_right = 1004.0
-offset_bottom = 439.0

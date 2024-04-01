@@ -3,6 +3,8 @@ extends MeshInstance3D
 var initial_position = position.y
 var time_state = 0.0
 
+@onready var light_gun := $Sphere/Green_Bulb
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
