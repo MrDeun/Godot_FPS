@@ -11,11 +11,11 @@
 [ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://Textures/fonts/e1234/E1234.ttf" id="4_ls2bh"]
 [ext_resource type="Script" path="res://Label.gd" id="4_uwn47"]
 [ext_resource type="Material" uid="uid://scqbucq8c4tx" path="res://Textures/WallBrick/new_standard_material_3d.tres" id="5_nk004"]
-[ext_resource type="Texture2D" uid="uid://b1ps083iebcoa" path="res://Textures/Sci-Fi Game Icons/Black/slice15.svg" id="5_xer3r"]
 [ext_resource type="Material" uid="uid://dnm4ypqidmmgd" path="res://Textures/Floor/floor_material.tres" id="6_0unwe"]
-[ext_resource type="Texture2D" uid="uid://bhghlj8n8bhmv" path="res://Textures/Sci-Fi Game Icons/Black/slice16.svg" id="6_qu0ep"]
+[ext_resource type="Texture2D" uid="uid://cfqu7ih3j7kvu" path="res://Textures/Sci-Fi Game Icons/Black/slice15.png" id="7_7wldp"]
 [ext_resource type="Script" path="res://FlickerLight.gd" id="7_agybe"]
 [ext_resource type="Script" path="res://PickableMagnum.gd" id="8_oqqvk"]
+[ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://Textures/Sci-Fi Game Icons/Black/slice16.png" id="8_ws364"]
 [ext_resource type="Script" path="res://OmniLight3D.gd" id="12_1avoh"]
 [ext_resource type="Script" path="res://Sphere.gd" id="12_2h4xq"]
 [ext_resource type="Script" path="res://Collision.gd" id="12_jcrge"]
@@ -2733,25 +2733,30 @@ texture = ExtResource("4_84y0a")
 
 [node name="HUD" type="Control" parent="Player/Neck/PlayerCamera"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Ammo" type="Control" parent="Player/Neck/PlayerCamera/HUD"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 275.0
+offset_bottom = 275.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Neck/PlayerCamera/HUD/Ammo"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1000.0
-offset_top = 520.0
-offset_right = 1313.0
-offset_bottom = 692.0
+offset_left = -25.0
+offset_right = 288.0
+offset_bottom = 172.0
 grow_vertical = 0
-scale = Vector2(0.385, 0.385)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("4_6lwpj")
 
 [node name="Label" type="Label" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
@@ -2761,27 +2766,30 @@ label_settings = SubResource("LabelSettings_rxat7")
 script = ExtResource("4_uwn47")
 
 [node name="TextureRect" type="TextureRect" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
+modulate = Color(0, 0.643137, 0, 1)
 layout_mode = 2
-texture = ExtResource("5_xer3r")
+texture = ExtResource("7_7wldp")
 expand_mode = 3
 stretch_mode = 3
 
 [node name="Health" type="Control" parent="Player/Neck/PlayerCamera/HUD"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Neck/PlayerCamera/HUD/Health"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = 508.0
-offset_right = 725.0
-offset_bottom = 748.0
+offset_left = -535.0
+offset_top = 275.0
+offset_right = -60.0
+offset_bottom = 447.0
 grow_vertical = 0
-scale = Vector2(0.385, 0.385)
+scale = Vector2(0.2, 0.2)
 
 [node name="TextureRect" type="TextureRect" parent="Player/Neck/PlayerCamera/HUD/Health/HBoxContainer"]
 modulate = Color(0, 0.705882, 0, 1)
@@ -2789,7 +2797,7 @@ self_modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
-texture = ExtResource("6_qu0ep")
+texture = ExtResource("8_ws364")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Player/Neck/PlayerCamera/HUD/Health/HBoxContainer"]

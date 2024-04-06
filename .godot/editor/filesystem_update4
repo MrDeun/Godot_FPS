@@ -6,8 +6,3 @@ res://Camera3D.gd
 res://Textures/WallBrick/new_standard_material_3d.tres
 res://Textures/Floor/floor_material.tres
 res://pistol.tscn
-res://Player.gd
-res://pistol.gd
-res://Label.gd
-res://box_shaker.gd
-res://PickableMagnum.gd
