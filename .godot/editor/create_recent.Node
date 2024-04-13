@@ -1,3 +1,7 @@
+Node3D
+AnimationPlayer
+Timer
+Decal
 MeshInstance3D
 AudioStreamPlayer3D
 Node
@@ -8,8 +12,3 @@ Control
 RichTextLabel
 HSplitContainer
 GridContainer
-Container
-RayCast3D
-OmniLight3D
-StaticBody3D
-CollisionShape3D

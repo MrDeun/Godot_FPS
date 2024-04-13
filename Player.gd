@@ -24,15 +24,27 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var sphere_collision := $"../HighCalibler/Sphere"
 @onready var pistol := $Neck/PlayerCamera/Pistol
 @onready var ammo_count := $Neck/PlayerCamera/HUD/Ammo/HBoxContainer
+@onready var decal_scene := preload("res://decal.tscn")
 
 func _pistol_fire():
 	var fire_success: bool = pistol.shoot()
 	if gun_raycast.is_colliding() and fire_success:
+		var col_normal = gun_raycast.get_collision_normal()
+		var col_point = gun_raycast.get_collision_point()
 		var target = gun_raycast.get_collider()
 		ammo_count.give_shake()
 		print(target.name)
 		if target.name == sphere_collision.name:
 			target.green_buln.got_hit()
+		else :
+			var b_decal = decal_scene.instantiate()
+			gun_raycast.get_collider().add_child(b_decal)
+			b_decal.global_position = col_point
+			if col_normal == Vector3.DOWN:
+				b_decal.rotation_degrees.x = 90
+			elif col_normal != Vector3.UP:
+				b_decal.look_at(col_point - col_normal, Vector3(0,1,0))
+			
 			
 			
 
@@ -76,7 +88,7 @@ func _physics_process(delta):
 	neck_camera.transform.origin = _headbob(t_bob)
 	
 	if Input.is_action_pressed("shoot"):
-		_pistol_fire()
+		_pistol_fire() 
 	if Input.is_action_pressed("reload"):
 		pistol.reload()
 				

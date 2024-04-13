@@ -180,7 +180,7 @@ tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_s3sxr"]
 resource_name = "click"
-length = 0.1
+length = 0.02
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true

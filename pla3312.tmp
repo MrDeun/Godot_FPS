@@ -49,6 +49,21 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5
 fov = 90.0
 script = ExtResource("2_y0ndd")
 
+[node name="Crooshair_texture" type="TextureRect" parent="Neck/PlayerCamera"]
+modulate = Color(0, 0.607843, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2gsju")
+
 [node name="HUD" type="Control" parent="Neck/PlayerCamera"]
 layout_mode = 3
 anchors_preset = 8
@@ -122,22 +137,6 @@ stretch_mode = 3
 layout_mode = 2
 text = "100"
 label_settings = SubResource("LabelSettings_rxat7")
-
-[node name="Crooshair_texture" type="TextureRect" parent="Neck/PlayerCamera/HUD"]
-modulate = Color(0, 0.607843, 0, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_2gsju")
 
 [node name="Pistol" parent="Neck/PlayerCamera" instance=ExtResource("9_no4r2")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.25, -0.2, -0.5)
