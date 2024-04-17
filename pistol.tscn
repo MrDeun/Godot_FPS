@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://pp1rlhqbj5d1"]
+[gd_scene load_steps=19 format=3 uid="uid://pp1rlhqbj5d1"]
 
 [ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="1_7p2lv"]
 [ext_resource type="Script" path="res://pistol.gd" id="1_u3m5u"]
@@ -23,35 +23,37 @@ emission_texture = ExtResource("3_rmwnp")
 resource_name = "Fire"
 length = 0.75
 step = 0.05
-tracks/0/type = "position_3d"
+tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("gun_model")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 0.1, 1, -0.7, -1.66, 0, 0.2, 1, -0.7, -1.33, 0, 0.55, 1, 0, -1.66, 0, 0.75, 1, 0, -1.66, 0)
-tracks/1/type = "rotation_3d"
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0, 1, 0.2, 1, 0, 0, 0.259, 0.966, 0.6, 1, 0, 0, -0.087, 0.996, 0.75, 1, 0, 0, 0, 0.966)
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun_model")
+tracks/1/path = NodePath("gun_model/muzzle_flash:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0, 1, 0.2, 1, 0, 0, 0.259, 0.966, 0.6, 1, 0, 0, -0.087, 0.996, 0.75, 1, 0, 0, 0, 0.966)
-tracks/2/type = "audio"
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.5, 0.5, 0.5), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/path = NodePath("gun_model/muzzle_flash:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": [{
-"end_offset": 0.932155,
-"start_offset": 0.0,
-"stream": ExtResource("3_swpqh")
-}],
-"times": PackedFloat32Array(-0.2)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.32838, 1.67337, 0)]
 }
-tracks/2/use_blend = true
 tracks/3/type = "position_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
@@ -59,30 +61,28 @@ tracks/3/path = NodePath("gun_model/muzzle_flash")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array()
-tracks/4/type = "value"
+tracks/4/type = "position_3d"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("gun_model/muzzle_flash:position")
+tracks/4/path = NodePath("gun_model")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(2.32838, 1.67337, 0)]
-}
-tracks/5/type = "value"
+tracks/4/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 0.1, 1, -0.7, -1.66, 0, 0.2, 1, -0.7, -1.33, 0, 0.55, 1, 0, -1.66, 0, 0.75, 1, 0, -1.66, 0)
+tracks/5/type = "audio"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("gun_model/muzzle_flash:scale")
+tracks/5/path = NodePath("AudioStreamPlayer3D")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.5, 0.5, 0.5), Vector3(0, 0, 0)]
+"clips": [{
+"end_offset": 0.932155,
+"start_offset": 0.0,
+"stream": ExtResource("3_swpqh")
+}],
+"times": PackedFloat32Array(-0.2)
 }
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mbmhn"]
 resource_name = "Idle"
@@ -98,66 +98,90 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 5, 1, 0, -1.66, 0)
 [sub_resource type="Animation" id="Animation_0gco2"]
 resource_name = "Idle_2"
 step = 0.25
-tracks/0/type = "position_3d"
+tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("gun_model")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 1, 1, 0, -1.66, 0)
-tracks/1/type = "rotation_3d"
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, -0.087, -0.026, -0.002, 0.996, 0.75, 1, 0.087, 0.026, -0.002, 0.996, 1, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("gun_model")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, -0.087, -0.026, -0.002, 0.996, 0.75, 1, 0.087, 0.026, -0.002, 0.996, 1, 1, 0, 0, 0, 1)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 1, 1, 0, -1.66, 0)
 
 [sub_resource type="Animation" id="Animation_jhym3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun_model/muzzle_flash:position")
+tracks/0/path = NodePath("gun_model:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(2.32838, 1.67337, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun_model/muzzle_flash:scale")
+tracks/1/path = NodePath("gun_model:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [Vector3(0, -1.66, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun_model/muzzle_flash:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun_model/muzzle_flash:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.32838, 1.67337, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_k5r4f"]
 resource_name = "Reload"
 length = 1.5
 step = 0.05
-tracks/0/type = "position_3d"
+tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("gun_model")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 0.3, 1, 0, -2, 0, 0.4, 1, 0, -2.33, 0, 0.5, 1, 0, -1.77, 0, 0.6, 1, 0, -2, 0, 0.6001, 1, 0, -2, 0, 0.8, 1, 0, -2, 0, 1, 1, 0.33, -2, 0, 1.2, 1, 0, -2, 0, 1.5, 1, 0, -1.66, 0)
-tracks/1/type = "rotation_3d"
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, 0, -0.259, 0.966, 0.6, 1, 0, 0, -0.259, 0.966, 0.8, 1, 0, 0, 0.259, 0.966, 1, 1, 0, 0, 0.383, 0.924, 1.2, 1, 0, 0, 0.259, 0.966, 1.5, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("gun_model")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, 0, -0.259, 0.966, 0.6, 1, 0, 0, -0.259, 0.966, 0.8, 1, 0, 0, 0.259, 0.966, 1, 1, 0, 0, 0.383, 0.924, 1.2, 1, 0, 0, 0.259, 0.966, 1.5, 1, 0, 0, 0, 1)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -1.66, 0, 0.3, 1, 0, -2, 0, 0.4, 1, 0, -2.33, 0, 0.5, 1, 0, -1.77, 0, 0.6, 1, 0, -2, 0, 0.6001, 1, 0, -2, 0, 0.8, 1, 0, -2, 0, 1, 1, 0.33, -2, 0, 1.2, 1, 0, -2, 0, 1.5, 1, 0, -1.66, 0)
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -197,6 +221,64 @@ tracks/0/keys = {
 }
 tracks/0/use_blend = true
 
+[sub_resource type="Animation" id="Animation_4koa2"]
+resource_name = "activate"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun_model:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.27, 0.32, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.04832, 0), Vector3(0, -0.504554, 0), Vector3(0, -0.682498, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun_model:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.27, 0.32, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-3.76702, -1.66, -4.84415), Vector3(-3.57676, -1.66, -4.46217), Vector3(-1.10347, -1.66, 0.503581), Vector3(-0.821895, -1.66, 0.797006), Vector3(0, -1.66, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gk0bo"]
+resource_name = "deactivate"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun_model:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun_model:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sxkh1"]
 _data = {
 "Fire": SubResource("Animation_fbap6"),
@@ -204,14 +286,17 @@ _data = {
 "Idle_2": SubResource("Animation_0gco2"),
 "RESET": SubResource("Animation_jhym3"),
 "Reload": SubResource("Animation_k5r4f"),
-"click": SubResource("Animation_s3sxr")
+"activate": SubResource("Animation_4koa2"),
+"click": SubResource("Animation_s3sxr"),
+"deactivate": SubResource("Animation_gk0bo")
 }
 
 [node name="Pistol" type="Node3D"]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.4, 0.1, -1)
 script = ExtResource("1_u3m5u")
 
 [node name="gun_model" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.66, 0)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, -1.66, 0)
 mesh = ExtResource("1_7p2lv")
 
 [node name="muzzle_flash" type="MeshInstance3D" parent="gun_model"]
@@ -238,6 +323,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3too2")
 libraries = {
 "": SubResource("AnimationLibrary_sxkh1")
 }
+speed_scale = 0.544
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 volume_db = -32.0
+
+[node name="reload_timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="reload_timer" to="." method="_on_reload_timer_timeout"]

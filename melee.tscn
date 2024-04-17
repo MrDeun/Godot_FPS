@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://ddwvo0we58w5u"]
+
+[node name="Melee" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.598956, 0)

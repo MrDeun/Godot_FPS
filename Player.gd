@@ -22,7 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck_camera := $Neck/PlayerCamera
 @onready var gun_raycast := $Neck/PlayerCamera/Crosshair_raycast
 @onready var sphere_collision := $"../HighCalibler/Sphere"
-@onready var pistol := $Neck/PlayerCamera/Pistol
+@onready var pistol := $Neck/PlayerCamera/weapon_rigging/Pistol
 @onready var ammo_count := $Neck/PlayerCamera/HUD/Ammo/HBoxContainer
 @onready var decal_scene := preload("res://decal.tscn")
 
@@ -33,7 +33,6 @@ func _pistol_fire():
 		var col_point = gun_raycast.get_collision_point()
 		var target = gun_raycast.get_collider()
 		ammo_count.give_shake()
-		print(target.name)
 		if target.name == sphere_collision.name:
 			target.green_buln.got_hit()
 		else :
@@ -69,7 +68,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

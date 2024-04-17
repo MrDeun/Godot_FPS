@@ -1,5 +1,9 @@
-Node3D
 AnimationPlayer
+Node3D
+Camera3D
+CollisionShape3D
+CharacterBody3D
+CyclopsConvexBlock
 Timer
 Decal
 MeshInstance3D
@@ -8,7 +12,3 @@ Node
 TextureRect
 Label
 HBoxContainer
-Control
-RichTextLabel
-HSplitContainer
-GridContainer

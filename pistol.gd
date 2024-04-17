@@ -4,31 +4,19 @@ const mag_size = 8
 const max_reserve = 80
 const ray_range = 100
 
-var ammo_in_mag = 8
-var reserve = 32
+@export var ammo_in_mag = 8
+@export var reserve = 32
 
 @onready var player_anim := $anim_player
 @onready var sphere_collision := $"../../../../HighCalibler/Sphere"
-
+@onready var reload_timer := $reload_timer
 func reload() -> bool:
-	if ammo_in_mag != 8 and !player_anim.is_playing() and reserve > 0:
+	if reserve > 0 and !player_anim.is_playing() and ammo_in_mag != 8:
 		player_anim.play("Reload")
-		while (player_anim.is_playing()):
-			continue
-		if reserve >= 8:
-			if ammo_in_mag == 0:
-				ammo_in_mag = mag_size
-				reserve -= mag_size
-			else:
-				var missing_bullets: int = mag_size - ammo_in_mag
-				ammo_in_mag += missing_bullets
-				reserve -= missing_bullets
-			return true
-		else:
-			ammo_in_mag = reserve
-			reserve -= reserve
-			return true
-	return false
+		reload_timer.start()
+		return true;
+	else:
+		return false
 	
 func shoot() -> bool:
 	print(player_anim.is_playing())
@@ -49,3 +37,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func _on_reload_timer_timeout():
+	var missing: int = mag_size - ammo_in_mag;
+	if missing > reserve:
+		ammo_in_mag += reserve
+		reserve = 0
+	else:
+		ammo_in_mag += missing
+		reserve -= missing
+	
+	

@@ -1,6 +1,6 @@
 extends Label
 
-@onready var pistol := $"../../../../Pistol"
+@onready var pistol := $"../../../../weapon_rigging/Pistol"
 
 
 var current_count := 0
