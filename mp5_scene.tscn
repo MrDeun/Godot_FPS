@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1yud820f28sn"]
+
+[ext_resource type="PackedScene" uid="uid://bmffk1r1n4ytr" path="res://models/PSXMP5/MP5.fbx" id="1_xskr1"]
+
+[node name="Root Scene" instance=ExtResource("1_xskr1")]
+
+[node name="RootNode" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.73163, 0)
+
+[node name="9MM_001" parent="RootNode" index="0"]
+visible = false
+
+[node name="9MM_003" parent="RootNode" index="1"]
+visible = false
+
+[node name="MP5BodyFull" parent="RootNode" index="2"]
+visible = false
+
+[node name="MP5BodySilenced_004" parent="RootNode" index="3"]
+visible = false
+
+[node name="MP5FullStock" parent="RootNode" index="4"]
+visible = false
+
+[node name="MP5Magazene" parent="RootNode" index="6"]
+visible = false
+
+[node name="MP5Magazene_003" parent="RootNode" index="8"]
+visible = false
+
+[node name="MP5MagazeneFull" parent="RootNode" index="9"]
+visible = false
+
+[node name="MP5SlidingStock" parent="RootNode" index="10"]
+transform = Transform3D(100, 0, 0, 0, 100, -1.62921e-05, 0, 1.62921e-05, 100, 1.97283, 2.87247, 0)
+
+[node name="Trigger_002" parent="RootNode" index="11"]
+visible = false
+
+[node name="Trigger_004" parent="RootNode" index="13"]
+visible = false

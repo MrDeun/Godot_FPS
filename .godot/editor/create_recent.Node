@@ -1,3 +1,4 @@
+MeshInstance3D
 AnimationPlayer
 Node3D
 Camera3D
@@ -6,7 +7,6 @@ CharacterBody3D
 CyclopsConvexBlock
 Timer
 Decal
-MeshInstance3D
 AudioStreamPlayer3D
 Node
 TextureRect

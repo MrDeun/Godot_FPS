@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2hn14tcs5mtc"]
 
-[ext_resource type="Script" path="res://decal.gd" id="1_u8epw"]
 [ext_resource type="Texture2D" uid="uid://cdab3gvxha1is" path="res://Textures/bullet_hole.png" id="1_u8tj2"]
+[ext_resource type="Script" path="res://scripts/decal.gd" id="1_y8mgy"]
 
 [sub_resource type="Animation" id="Animation_nkltq"]
 length = 0.001
@@ -106,7 +106,7 @@ _data = {
 
 [node name="decal" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-script = ExtResource("1_u8epw")
+script = ExtResource("1_y8mgy")
 
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
