@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cdwmo5e4lmej7"
-path="res://.godot/imported/USP.obj-131821afb1be8171fb41fac84891491d.mesh"
+path="res://.godot/imported/USP.obj-59265149874a498ee4510a522a9e44d5.mesh"
 
 [deps]
 
-files=["res://.godot/imported/USP.obj-131821afb1be8171fb41fac84891491d.mesh"]
+files=["res://.godot/imported/USP.obj-59265149874a498ee4510a522a9e44d5.mesh"]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/USP/USP.obj"
-dest_files=["res://.godot/imported/USP.obj-131821afb1be8171fb41fac84891491d.mesh", "res://.godot/imported/USP.obj-131821afb1be8171fb41fac84891491d.mesh"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/USP/USP.obj"
+dest_files=["res://.godot/imported/USP.obj-59265149874a498ee4510a522a9e44d5.mesh", "res://.godot/imported/USP.obj-59265149874a498ee4510a522a9e44d5.mesh"]
 
 [params]
 

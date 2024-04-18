@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://daqqrmttxtg4u"
-path="res://.godot/imported/MP5.obj-963428602412d851c380f79030b5811b.mesh"
+path="res://.godot/imported/MP5.obj-e569af7cd1d244cd4881ff88ddaac998.mesh"
 
 [deps]
 
-files=["res://.godot/imported/MP5.obj-963428602412d851c380f79030b5811b.mesh"]
+files=["res://.godot/imported/MP5.obj-e569af7cd1d244cd4881ff88ddaac998.mesh"]
 
-source_file="res://models/PSXMP5/MP5.obj"
-dest_files=["res://.godot/imported/MP5.obj-963428602412d851c380f79030b5811b.mesh", "res://.godot/imported/MP5.obj-963428602412d851c380f79030b5811b.mesh"]
+source_file="res://models/Weapons/PSXMP5/MP5.obj"
+dest_files=["res://.godot/imported/MP5.obj-e569af7cd1d244cd4881ff88ddaac998.mesh", "res://.godot/imported/MP5.obj-e569af7cd1d244cd4881ff88ddaac998.mesh"]
 
 [params]
 

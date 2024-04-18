@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dojfcrg4qttmm"
-path="res://.godot/imported/Baretta9M.obj-93baf5c141fc0adf28e42e5f56efa436.mesh"
+path="res://.godot/imported/Baretta9M.obj-b73dc6274a12b233cd7f7a51dfffe0cb.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Baretta9M.obj-93baf5c141fc0adf28e42e5f56efa436.mesh"]
+files=["res://.godot/imported/Baretta9M.obj-b73dc6274a12b233cd7f7a51dfffe0cb.mesh"]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Baretta9M.obj"
-dest_files=["res://.godot/imported/Baretta9M.obj-93baf5c141fc0adf28e42e5f56efa436.mesh", "res://.godot/imported/Baretta9M.obj-93baf5c141fc0adf28e42e5f56efa436.mesh"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Baretta9M/Baretta9M.obj"
+dest_files=["res://.godot/imported/Baretta9M.obj-b73dc6274a12b233cd7f7a51dfffe0cb.mesh", "res://.godot/imported/Baretta9M.obj-b73dc6274a12b233cd7f7a51dfffe0cb.mesh"]
 
 [params]
 

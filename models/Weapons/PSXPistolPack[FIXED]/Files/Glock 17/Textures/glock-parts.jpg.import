@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://njsp6otyeayu"
-path="res://.godot/imported/glock-parts.jpg-b077ece5666301b69f5b37ac1fede46e.ctex"
+path="res://.godot/imported/glock-parts.jpg-574514189deb2cf129bf70f6e2f9a5c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Glock 17/Textures/glock-parts.jpg"
-dest_files=["res://.godot/imported/glock-parts.jpg-b077ece5666301b69f5b37ac1fede46e.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Glock 17/Textures/glock-parts.jpg"
+dest_files=["res://.godot/imported/glock-parts.jpg-574514189deb2cf129bf70f6e2f9a5c6.ctex"]
 
 [params]
 

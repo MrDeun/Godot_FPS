@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctqm287jtb0vv"
-path.s3tc="res://.godot/imported/Baretta9M-cf44e5ed03a7df995d5d55c5b8575a42_BarettaText.jpg-5bb98c43ab085be65d1588bbb554d7fc.s3tc.ctex"
+path.s3tc="res://.godot/imported/Baretta9M-cf44e5ed03a7df995d5d55c5b8575a42_BarettaText.jpg-15e1f0b365282c253a3496df067e6f6b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Baretta9M-cf44e5ed03a7df995d5d55c5b8575a42_BarettaText.jpg"
-dest_files=["res://.godot/imported/Baretta9M-cf44e5ed03a7df995d5d55c5b8575a42_BarettaText.jpg-5bb98c43ab085be65d1588bbb554d7fc.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Baretta9M/Baretta9M-cf44e5ed03a7df995d5d55c5b8575a42_BarettaText.jpg"
+dest_files=["res://.godot/imported/Baretta9M-cf44e5ed03a7df995d5d55c5b8575a42_BarettaText.jpg-15e1f0b365282c253a3496df067e6f6b.s3tc.ctex"]
 
 [params]
 

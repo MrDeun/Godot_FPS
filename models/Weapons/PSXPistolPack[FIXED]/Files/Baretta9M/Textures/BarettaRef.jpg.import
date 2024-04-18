@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jeph52h0lmqs"
-path="res://.godot/imported/BarettaRef.jpg-316ccca2a8d9d87f5dd9d5f86f6e5398.ctex"
+path="res://.godot/imported/BarettaRef.jpg-dcd8d936e84d01640ad6fb21ac168e1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/BarettaRef.jpg"
-dest_files=["res://.godot/imported/BarettaRef.jpg-316ccca2a8d9d87f5dd9d5f86f6e5398.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/BarettaRef.jpg"
+dest_files=["res://.godot/imported/BarettaRef.jpg-dcd8d936e84d01640ad6fb21ac168e1b.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcnqqmhb53t37"
-path="res://.godot/imported/MP5Back.png-f57a608aa45cc1c2f50a326da4657a34.ctex"
+path="res://.godot/imported/MP5Back.png-0ba1445678e0d786f911a3f659c4146c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/PSXMP5/Images/MP5Back.png"
-dest_files=["res://.godot/imported/MP5Back.png-f57a608aa45cc1c2f50a326da4657a34.ctex"]
+source_file="res://models/Weapons/PSXMP5/Images/MP5Back.png"
+dest_files=["res://.godot/imported/MP5Back.png-0ba1445678e0d786f911a3f659c4146c.ctex"]
 
 [params]
 

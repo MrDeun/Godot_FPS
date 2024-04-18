@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://brbykk4k67c1e"
-path="res://.godot/imported/Glock17.obj-861ee809443a9390fe2016ba0b023f91.mesh"
+path="res://.godot/imported/Glock17.obj-cbbeaab96476a5206c63837932d9584f.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Glock17.obj-861ee809443a9390fe2016ba0b023f91.mesh"]
+files=["res://.godot/imported/Glock17.obj-cbbeaab96476a5206c63837932d9584f.mesh"]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Glock 17/Glock17.obj"
-dest_files=["res://.godot/imported/Glock17.obj-861ee809443a9390fe2016ba0b023f91.mesh", "res://.godot/imported/Glock17.obj-861ee809443a9390fe2016ba0b023f91.mesh"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Glock 17/Glock17.obj"
+dest_files=["res://.godot/imported/Glock17.obj-cbbeaab96476a5206c63837932d9584f.mesh", "res://.godot/imported/Glock17.obj-cbbeaab96476a5206c63837932d9584f.mesh"]
 
 [params]
 

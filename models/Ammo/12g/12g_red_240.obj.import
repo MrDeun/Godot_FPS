@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcqyy1banb0gm"
+path="res://.godot/imported/12g_red_240.obj-ae5ed13a1b9ad737ff593b2f9a58c8cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/12g_red_240.obj-ae5ed13a1b9ad737ff593b2f9a58c8cb.mesh"]
+
+source_file="res://models/Ammo/12g/12g_red_240.obj"
+dest_files=["res://.godot/imported/12g_red_240.obj-ae5ed13a1b9ad737ff593b2f9a58c8cb.mesh", "res://.godot/imported/12g_red_240.obj-ae5ed13a1b9ad737ff593b2f9a58c8cb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

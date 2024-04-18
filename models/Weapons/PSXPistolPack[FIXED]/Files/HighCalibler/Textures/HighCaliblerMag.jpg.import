@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://butcin20nu1yd"
-path.s3tc="res://.godot/imported/HighCaliblerMag.jpg-75e51b39d004fcbeecc5a8b989756967.s3tc.ctex"
+path.s3tc="res://.godot/imported/HighCaliblerMag.jpg-954bc56ecc3a1cb9ed3985e4fafa7642.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/Textures/HighCaliblerMag.jpg"
-dest_files=["res://.godot/imported/HighCaliblerMag.jpg-75e51b39d004fcbeecc5a8b989756967.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/Textures/HighCaliblerMag.jpg"
+dest_files=["res://.godot/imported/HighCaliblerMag.jpg-954bc56ecc3a1cb9ed3985e4fafa7642.s3tc.ctex"]
 
 [params]
 

@@ -10,6 +10,7 @@ const ray_range = 100
 @onready var player_anim := $anim_player
 @onready var sphere_collision := $"../../../../HighCalibler/Sphere"
 @onready var reload_timer := $reload_timer
+
 func reload() -> bool:
 	if reserve > 0 and !player_anim.is_playing() and ammo_in_mag != 8:
 		player_anim.play("Reload")

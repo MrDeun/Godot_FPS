@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3drwxoummk0a"
-path.s3tc="res://.godot/imported/Pistols-6abf26a125e11f68f8cf445bdcc8ad30_GLOCK_MAG_text.jpg-8914942b4faa8596db6f7359a20b9352.s3tc.ctex"
+path.s3tc="res://.godot/imported/Pistols-6abf26a125e11f68f8cf445bdcc8ad30_GLOCK_MAG_text.jpg-5d75035c19055f52163dd40a050e0ae6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Pistols-6abf26a125e11f68f8cf445bdcc8ad30_GLOCK_MAG_text.jpg"
-dest_files=["res://.godot/imported/Pistols-6abf26a125e11f68f8cf445bdcc8ad30_GLOCK_MAG_text.jpg-8914942b4faa8596db6f7359a20b9352.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Pistols-6abf26a125e11f68f8cf445bdcc8ad30_GLOCK_MAG_text.jpg"
+dest_files=["res://.godot/imported/Pistols-6abf26a125e11f68f8cf445bdcc8ad30_GLOCK_MAG_text.jpg-5d75035c19055f52163dd40a050e0ae6.s3tc.ctex"]
 
 [params]
 

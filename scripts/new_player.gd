@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 @onready var camera = $first_person_camera
+@onready var weapon_camera = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera
+
 var CameraRotation = Vector2(0,0)
 var MouseSense = 0.2001
 const SPEED = 10.0
@@ -24,6 +26,9 @@ func _input(event):
 		rotate_y(-deg_to_rad(event.relative.x * MouseSense))
 		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x,-70,80)
 	
+	
+func _process(delta):
+	weapon_camera.set_global_transform(camera.get_global_transform())
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

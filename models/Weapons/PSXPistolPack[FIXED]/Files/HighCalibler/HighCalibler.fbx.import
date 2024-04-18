@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c7fjx2mxy8n5o"
-path="res://.godot/imported/HighCalibler.fbx-bc4960e2fa57642ce49ae829c08a84fe.scn"
+path="res://.godot/imported/HighCalibler.fbx-ebfb2d5db37e0f20f7a079f5e99fe3bc.scn"
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.fbx"
-dest_files=["res://.godot/imported/HighCalibler.fbx-bc4960e2fa57642ce49ae829c08a84fe.scn"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.fbx"
+dest_files=["res://.godot/imported/HighCalibler.fbx-ebfb2d5db37e0f20f7a079f5e99fe3bc.scn"]
 
 [params]
 

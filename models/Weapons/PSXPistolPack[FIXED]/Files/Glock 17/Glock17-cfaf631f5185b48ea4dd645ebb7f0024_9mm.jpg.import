@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5n5c5ikylwro"
-path.s3tc="res://.godot/imported/Glock17-cfaf631f5185b48ea4dd645ebb7f0024_9mm.jpg-ab3c9286d7317e9146a7957b5cf9829b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Glock17-cfaf631f5185b48ea4dd645ebb7f0024_9mm.jpg-a43be748702d225d0b1f52d812286ec8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Glock 17/Glock17-cfaf631f5185b48ea4dd645ebb7f0024_9mm.jpg"
-dest_files=["res://.godot/imported/Glock17-cfaf631f5185b48ea4dd645ebb7f0024_9mm.jpg-ab3c9286d7317e9146a7957b5cf9829b.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Glock 17/Glock17-cfaf631f5185b48ea4dd645ebb7f0024_9mm.jpg"
+dest_files=["res://.godot/imported/Glock17-cfaf631f5185b48ea4dd645ebb7f0024_9mm.jpg-a43be748702d225d0b1f52d812286ec8.s3tc.ctex"]
 
 [params]
 

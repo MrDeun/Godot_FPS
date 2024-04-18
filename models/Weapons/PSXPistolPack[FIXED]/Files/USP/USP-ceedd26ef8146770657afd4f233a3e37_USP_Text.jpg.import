@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5wvo0p37e8p0"
-path.s3tc="res://.godot/imported/USP-ceedd26ef8146770657afd4f233a3e37_USP_Text.jpg-4ef1d3a33c91d9039b8c3fd6af2e07e0.s3tc.ctex"
+path.s3tc="res://.godot/imported/USP-ceedd26ef8146770657afd4f233a3e37_USP_Text.jpg-28520ecc7b366536a18bdb084097c642.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/USP/USP-ceedd26ef8146770657afd4f233a3e37_USP_Text.jpg"
-dest_files=["res://.godot/imported/USP-ceedd26ef8146770657afd4f233a3e37_USP_Text.jpg-4ef1d3a33c91d9039b8c3fd6af2e07e0.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/USP/USP-ceedd26ef8146770657afd4f233a3e37_USP_Text.jpg"
+dest_files=["res://.godot/imported/USP-ceedd26ef8146770657afd4f233a3e37_USP_Text.jpg-28520ecc7b366536a18bdb084097c642.s3tc.ctex"]
 
 [params]
 

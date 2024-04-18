@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cry0gus51qlbg"
-path.s3tc="res://.godot/imported/BarettaText.jpg-eec3944c98818f0937bf9b27b2ce86b2.s3tc.ctex"
+path.s3tc="res://.godot/imported/BarettaText.jpg-086bc8e2abe8adc94ca79f03df87a2f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/BarettaText.jpg"
-dest_files=["res://.godot/imported/BarettaText.jpg-eec3944c98818f0937bf9b27b2ce86b2.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Baretta9M/Textures/BarettaText.jpg"
+dest_files=["res://.godot/imported/BarettaText.jpg-086bc8e2abe8adc94ca79f03df87a2f1.s3tc.ctex"]
 
 [params]
 

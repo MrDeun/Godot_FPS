@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1opyk3o6rjgr"
-path.s3tc="res://.godot/imported/9mm.jpg-62b8da13f5136092a7fc29e75736766a.s3tc.ctex"
+path.s3tc="res://.godot/imported/9mm.jpg-dbe7ac71958f101ff618427a9bde1f51.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Glock 17/Textures/9mm.jpg"
-dest_files=["res://.godot/imported/9mm.jpg-62b8da13f5136092a7fc29e75736766a.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Glock 17/Textures/9mm.jpg"
+dest_files=["res://.godot/imported/9mm.jpg-dbe7ac71958f101ff618427a9bde1f51.s3tc.ctex"]
 
 [params]
 

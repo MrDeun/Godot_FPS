@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b745el1brmeyl"
-path="res://.godot/imported/Baretta9M.fbx-cf44e5ed03a7df995d5d55c5b8575a42.scn"
+path="res://.godot/imported/Baretta9M.fbx-f73ea796a468e68fe71ac626ca032ee4.scn"
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Baretta9M/Baretta9M.fbx"
-dest_files=["res://.godot/imported/Baretta9M.fbx-cf44e5ed03a7df995d5d55c5b8575a42.scn"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Baretta9M/Baretta9M.fbx"
+dest_files=["res://.godot/imported/Baretta9M.fbx-f73ea796a468e68fe71ac626ca032ee4.scn"]
 
 [params]
 

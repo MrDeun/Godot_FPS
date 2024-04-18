@@ -1,8 +1,8 @@
-[gd_scene load_steps=139 format=3 uid="uid://8rxwokly5ikl"]
+[gd_scene load_steps=139 format=3 uid="uid://ce0wlfmqegxbb"]
 
 [ext_resource type="Script" path="res://scripts/node_3d.gd" id="1_naqs7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_k3ryk"]
-[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
+[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
 [ext_resource type="Script" path="res://scripts/box_shaker.gd" id="3_no8sh"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="3_y5u5k"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_lp3id"]

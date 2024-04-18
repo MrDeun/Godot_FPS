@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://4yh8nag71cu1"
-path="res://.godot/imported/USP.fbx-bc117dd1e22eeaaf087b2c787c0c505f.scn"
+path="res://.godot/imported/USP.fbx-2182365453c2223b6608674c5bfd5962.scn"
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/USP/USP.fbx"
-dest_files=["res://.godot/imported/USP.fbx-bc117dd1e22eeaaf087b2c787c0c505f.scn"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/USP/USP.fbx"
+dest_files=["res://.godot/imported/USP.fbx-2182365453c2223b6608674c5bfd5962.scn"]
 
 [params]
 

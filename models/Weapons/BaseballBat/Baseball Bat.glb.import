@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c4el5be12nfbu"
-path="res://.godot/imported/Baseball Bat.glb-e170be9dc0725f6a67281606a04c98c7.scn"
+path="res://.godot/imported/Baseball Bat.glb-b5d22f9008f3fdf6cbcb3f359b849f20.scn"
 
 [deps]
 
-source_file="res://models/Baseball Bat.glb"
-dest_files=["res://.godot/imported/Baseball Bat.glb-e170be9dc0725f6a67281606a04c98c7.scn"]
+source_file="res://models/Weapons/BaseballBat/Baseball Bat.glb"
+dest_files=["res://.godot/imported/Baseball Bat.glb-b5d22f9008f3fdf6cbcb3f359b849f20.scn"]
 
 [params]
 

@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://cafimwm2vltgl"]
 
-[ext_resource type="PackedScene" uid="uid://c7fjx2mxy8n5o" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.fbx" id="1_7mi6v"]
+[ext_resource type="PackedScene" uid="uid://c7fjx2mxy8n5o" path="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.fbx" id="1_7mi6v"]
 
 [node name="Root Scene" instance=ExtResource("1_7mi6v")]

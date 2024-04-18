@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qgn1ixernaps"
-path.s3tc="res://.godot/imported/Pistols-877d2c0485357a789b4de4fef0c17fac_HighCaliblerMag.jpg-5ff12711777e426a329e4c5512d5a55a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Pistols-877d2c0485357a789b4de4fef0c17fac_HighCaliblerMag.jpg-ac71f0f3651a418bfde4f6b4edb0b9ce.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Pistols-877d2c0485357a789b4de4fef0c17fac_HighCaliblerMag.jpg"
-dest_files=["res://.godot/imported/Pistols-877d2c0485357a789b4de4fef0c17fac_HighCaliblerMag.jpg-5ff12711777e426a329e4c5512d5a55a.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Pistols-877d2c0485357a789b4de4fef0c17fac_HighCaliblerMag.jpg"
+dest_files=["res://.godot/imported/Pistols-877d2c0485357a789b4de4fef0c17fac_HighCaliblerMag.jpg-ac71f0f3651a418bfde4f6b4edb0b9ce.s3tc.ctex"]
 
 [params]
 

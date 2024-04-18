@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ixopis4jvaoo"
-path="res://.godot/imported/PistolsBack.png-48f22dd454b9450d1f96352b445a661c.ctex"
+path="res://.godot/imported/PistolsBack.png-62aedff56afc9b78fd9f0898e85b969e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Images/PistolsBack.png"
-dest_files=["res://.godot/imported/PistolsBack.png-48f22dd454b9450d1f96352b445a661c.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Images/PistolsBack.png"
+dest_files=["res://.godot/imported/PistolsBack.png-62aedff56afc9b78fd9f0898e85b969e.ctex"]
 
 [params]
 

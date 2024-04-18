@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://culq6cjt7h45h"
-path="res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh"
+path="res://.godot/imported/HighCalibler.obj-c5703d851c7c1b0cfd0274ba40b720b0.mesh"
 
 [deps]
 
-files=["res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh"]
+files=["res://.godot/imported/HighCalibler.obj-c5703d851c7c1b0cfd0274ba40b720b0.mesh"]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj"
-dest_files=["res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh", "res://.godot/imported/HighCalibler.obj-df9ce35c5991fcb4c90d00b7e8aa1116.mesh"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj"
+dest_files=["res://.godot/imported/HighCalibler.obj-c5703d851c7c1b0cfd0274ba40b720b0.mesh", "res://.godot/imported/HighCalibler.obj-c5703d851c7c1b0cfd0274ba40b720b0.mesh"]
 
 [params]
 

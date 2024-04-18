@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://03nklw4huxc2"
-path="res://.godot/imported/9mm.jpg-4c7fc25ba04a110ca2b45947b32bb72e.ctex"
+path="res://.godot/imported/9mm.jpg-0a84edaea201da3639df510990070077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/USP/Textures/9mm.jpg"
-dest_files=["res://.godot/imported/9mm.jpg-4c7fc25ba04a110ca2b45947b32bb72e.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/USP/Textures/9mm.jpg"
+dest_files=["res://.godot/imported/9mm.jpg-0a84edaea201da3639df510990070077.ctex"]
 
 [params]
 

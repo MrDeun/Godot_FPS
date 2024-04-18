@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bmffk1r1n4ytr"
-path="res://.godot/imported/MP5.fbx-eeba241c0a89066447f7985f4d20d516.scn"
+path="res://.godot/imported/MP5.fbx-af8f6e44ee7bad15c6093ffdeeed0543.scn"
 
 [deps]
 
-source_file="res://models/PSXMP5/MP5.fbx"
-dest_files=["res://.godot/imported/MP5.fbx-eeba241c0a89066447f7985f4d20d516.scn"]
+source_file="res://models/Weapons/PSXMP5/MP5.fbx"
+dest_files=["res://.godot/imported/MP5.fbx-af8f6e44ee7bad15c6093ffdeeed0543.scn"]
 
 [params]
 

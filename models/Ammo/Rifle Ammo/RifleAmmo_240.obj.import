@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dk40nxubxkmdv"
+path="res://.godot/imported/RifleAmmo_240.obj-7de7d087c193a3864db65146860eb0f8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RifleAmmo_240.obj-7de7d087c193a3864db65146860eb0f8.mesh"]
+
+source_file="res://models/Ammo/Rifle Ammo/RifleAmmo_240.obj"
+dest_files=["res://.godot/imported/RifleAmmo_240.obj-7de7d087c193a3864db65146860eb0f8.mesh", "res://.godot/imported/RifleAmmo_240.obj-7de7d087c193a3864db65146860eb0f8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

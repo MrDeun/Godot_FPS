@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6k6sr3f0t5qr"
-path.s3tc="res://.godot/imported/glockText.jpg-e4e59259b84bd449702db8b429ae0612.s3tc.ctex"
+path.s3tc="res://.godot/imported/glockText.jpg-64bc9b552520a8a52c274a16066b5370.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Glock 17/Textures/glockText.jpg"
-dest_files=["res://.godot/imported/glockText.jpg-e4e59259b84bd449702db8b429ae0612.s3tc.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Glock 17/Textures/glockText.jpg"
+dest_files=["res://.godot/imported/glockText.jpg-64bc9b552520a8a52c274a16066b5370.s3tc.ctex"]
 
 [params]
 

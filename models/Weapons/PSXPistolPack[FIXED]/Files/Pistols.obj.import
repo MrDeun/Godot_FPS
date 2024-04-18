@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://q4b1lm8uh64o"
-path="res://.godot/imported/Pistols.obj-f68649ce319bd3e0700e29c3b7379fd1.mesh"
+path="res://.godot/imported/Pistols.obj-94455300ed4ea2a5c4d1d30e45164cd2.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Pistols.obj-f68649ce319bd3e0700e29c3b7379fd1.mesh"]
+files=["res://.godot/imported/Pistols.obj-94455300ed4ea2a5c4d1d30e45164cd2.mesh"]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/Pistols.obj"
-dest_files=["res://.godot/imported/Pistols.obj-f68649ce319bd3e0700e29c3b7379fd1.mesh", "res://.godot/imported/Pistols.obj-f68649ce319bd3e0700e29c3b7379fd1.mesh"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Pistols.obj"
+dest_files=["res://.godot/imported/Pistols.obj-94455300ed4ea2a5c4d1d30e45164cd2.mesh", "res://.godot/imported/Pistols.obj-94455300ed4ea2a5c4d1d30e45164cd2.mesh"]
 
 [params]
 

@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bxuws553naipm"
+path.s3tc="res://.godot/imported/Pistols-8474c511f9bfe59c74edd7d966ec7734_glockText.jpg-655b40e46101b2de36afb3ad32dbe585.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "b4b69bdb7fd8b924f6a3efcfc28e28f7"
+}
+
+[deps]
+
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/Pistols-8474c511f9bfe59c74edd7d966ec7734_glockText.jpg"
+dest_files=["res://.godot/imported/Pistols-8474c511f9bfe59c74edd7d966ec7734_glockText.jpg-655b40e46101b2de36afb3ad32dbe585.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

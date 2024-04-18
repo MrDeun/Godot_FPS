@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://1gvpb2oeny3t"
+path.s3tc="res://.godot/imported/12g_Green_240-481ac0ebb6ecca51efbc5978111d50ab_12G_240px.png-31b239b8cb27b3a55627a9b314f2c18a.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "7abd94968ab8153111d16d3a3578890c"
+}
+
+[deps]
+
+source_file="res://models/Ammo/12g/12g_Green_240-481ac0ebb6ecca51efbc5978111d50ab_12G_240px.png"
+dest_files=["res://.godot/imported/12g_Green_240-481ac0ebb6ecca51efbc5978111d50ab_12G_240px.png-31b239b8cb27b3a55627a9b314f2c18a.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

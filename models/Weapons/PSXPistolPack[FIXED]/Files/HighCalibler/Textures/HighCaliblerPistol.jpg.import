@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8nudd8i3q3if"
-path="res://.godot/imported/HighCaliblerPistol.jpg-2d6e049ee975628a22aed93eb6f5ddb8.ctex"
+path="res://.godot/imported/HighCaliblerPistol.jpg-5ccb6b51f2ed6bb5ab75305715b4f757.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/Textures/HighCaliblerPistol.jpg"
-dest_files=["res://.godot/imported/HighCaliblerPistol.jpg-2d6e049ee975628a22aed93eb6f5ddb8.ctex"]
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/Textures/HighCaliblerPistol.jpg"
+dest_files=["res://.godot/imported/HighCaliblerPistol.jpg-5ccb6b51f2ed6bb5ab75305715b4f757.ctex"]
 
 [params]
 

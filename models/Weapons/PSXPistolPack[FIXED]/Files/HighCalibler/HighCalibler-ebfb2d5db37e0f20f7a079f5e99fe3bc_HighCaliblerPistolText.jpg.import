@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b8psrx5kx06ki"
+path.s3tc="res://.godot/imported/HighCalibler-ebfb2d5db37e0f20f7a079f5e99fe3bc_HighCaliblerPistolText.jpg-94dcf0a661f08f708c31d0393c674a1b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "13270a342586e74facd343bd6c534f18"
+}
+
+[deps]
+
+source_file="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler-ebfb2d5db37e0f20f7a079f5e99fe3bc_HighCaliblerPistolText.jpg"
+dest_files=["res://.godot/imported/HighCalibler-ebfb2d5db37e0f20f7a079f5e99fe3bc_HighCaliblerPistolText.jpg-94dcf0a661f08f708c31d0393c674a1b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
