@@ -1,4 +1,4 @@
-res://weapon_switch_testing.tscn
+res://player.tscn
 res://addons/cyclops_level_builder/shaders/outline_shader.tres
 res://addons/cyclops_level_builder/docks/material_palette/thumbnail_selected_theme.tres
 res://addons/cyclops_level_builder/docks/material_palette/thumbnail_normal_theme.tres
@@ -6,8 +6,7 @@ res://Textures/WallBrick/new_standard_material_3d.tres
 res://Textures/Floor/floor_material.tres
 res://node_3d.tscn
 res://decal.tscn
-res://player.tscn
+res://weapon_switch_testing.tscn
 res://pistol.tscn
 res://machine_gun.tscn
 res://new_player.tscn
-res://baseball_bat.tscn

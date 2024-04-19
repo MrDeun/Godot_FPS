@@ -114,14 +114,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0319332, -0.415979, 0.4216
 
 [node name="MachineGun" parent="first_person_camera/Weapon_Rig" instance=ExtResource("2_krh0t")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.281979, 0.0895573, -0.761672)
-visible = false
 
 [node name="Pistol" parent="first_person_camera/Weapon_Rig" instance=ExtResource("2_1o1yy")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.320903, 0.231248, -0.919217)
 visible = false
 
 [node name="BaseballBat" type="Node3D" parent="first_person_camera/Weapon_Rig"]
-transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.0713112, 0.182915, -0.658188)
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.0713112, 0.182915, -0.673186)
+visible = false
 
 [node name="RootNode" type="Node3D" parent="first_person_camera/Weapon_Rig/BaseballBat"]
 
