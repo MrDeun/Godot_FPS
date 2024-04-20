@@ -16,8 +16,8 @@
 [ext_resource type="Script" path="res://scripts/PickableMagnum.gd" id="8_oqqvk"]
 [ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="8_y6iti"]
 [ext_resource type="Script" path="res://scripts/weapon_rigging.gd" id="9_nqyp8"]
-[ext_resource type="PackedScene" uid="uid://ddwvo0we58w5u" path="res://melee.tscn" id="10_4db67"]
-[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://pistol.tscn" id="11_5q3xk"]
+[ext_resource type="PackedScene" uid="uid://ddwvo0we58w5u" path="res://subscenes/melee.tscn" id="10_4db67"]
+[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://subscenes/Pistol.tscn" id="11_5q3xk"]
 [ext_resource type="Script" path="res://scripts/OmniLight3D.gd" id="12_1avoh"]
 [ext_resource type="Script" path="res://scripts/Sphere.gd" id="12_2h4xq"]
 [ext_resource type="Script" path="res://scripts/Collision.gd" id="12_jcrge"]
@@ -2743,21 +2743,20 @@ offset_bottom = 275.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Neck/PlayerCamera/HUD/Ammo"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -25.0
-offset_right = 288.0
-offset_bottom = 172.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = 15.0
+offset_right = 808.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.2, 0.2)
+alignment = 1
 script = ExtResource("3_no8sh")
-
-[node name="Label" type="Label" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
-layout_mode = 2
-text = "8"
-label_settings = SubResource("LabelSettings_rxat7")
-script = ExtResource("5_fgt0o")
 
 [node name="TextureRect" type="TextureRect" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
 modulate = Color(0, 0.643137, 0, 1)
@@ -2765,6 +2764,12 @@ layout_mode = 2
 texture = ExtResource("6_uqx70")
 expand_mode = 3
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="Player/Neck/PlayerCamera/HUD/Ammo/HBoxContainer"]
+layout_mode = 2
+text = "8 / 32"
+label_settings = SubResource("LabelSettings_rxat7")
+script = ExtResource("5_fgt0o")
 
 [node name="Health" type="Control" parent="Player/Neck/PlayerCamera/HUD"]
 layout_mode = 1
@@ -2778,10 +2783,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -535.0
-offset_top = 275.0
-offset_right = -60.0
-offset_bottom = 447.0
+offset_left = -585.0
+offset_top = 290.0
+offset_right = -110.0
+offset_bottom = 462.0
 grow_vertical = 0
 scale = Vector2(0.2, 0.2)
 
@@ -2827,7 +2832,7 @@ starter_weapons = Array[String](["Melee", "Pistol"])
 [node name="Melee" parent="Player/Neck/PlayerCamera/weapon_rigging" instance=ExtResource("10_4db67")]
 
 [node name="Pistol" parent="Player/Neck/PlayerCamera/weapon_rigging" instance=ExtResource("11_5q3xk")]
-transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.25, -0.2, -0.5)
+transform = Transform3D(-8.74228e-09, 0, 0.25, 0, 0.2, 0, -0.2, 0, -1.09278e-08, 0.200638, -0.297082, -0.560551)
 
 [node name="Pathway" type="Node3D" parent="."]
 

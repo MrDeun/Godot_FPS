@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/node_3d.gd" id="1_naqs7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_k3ryk"]
-[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
+[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="3_jb3s6"]
 [ext_resource type="Script" path="res://scripts/box_shaker.gd" id="3_no8sh"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="3_y5u5k"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_lp3id"]
@@ -16,11 +16,12 @@
 [ext_resource type="Script" path="res://scripts/PickableMagnum.gd" id="8_oqqvk"]
 [ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="8_y6iti"]
 [ext_resource type="Script" path="res://scripts/weapon_rigging.gd" id="9_nqyp8"]
-[ext_resource type="PackedScene" uid="uid://ddwvo0we58w5u" path="res://melee.tscn" id="10_4db67"]
-[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://pistol.tscn" id="11_5q3xk"]
+[ext_resource type="PackedScene" uid="uid://ddwvo0we58w5u" path="res://subscenes/melee.tscn" id="10_4db67"]
+[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://subscenes/Pistol.tscn" id="11_5q3xk"]
 [ext_resource type="Script" path="res://scripts/OmniLight3D.gd" id="12_1avoh"]
 [ext_resource type="Script" path="res://scripts/Sphere.gd" id="12_2h4xq"]
 [ext_resource type="Script" path="res://scripts/Collision.gd" id="12_jcrge"]
+
 
 [sub_resource type="Environment" id="Environment_yyttt"]
 ambient_light_color = Color(0.309804, 0.501961, 0.607843, 1)

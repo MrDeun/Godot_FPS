@@ -8,7 +8,6 @@ const ray_range = 100
 @export var reserve = 32
 
 @onready var player_anim := $anim_player
-@onready var sphere_collision := $"../../../../HighCalibler/Sphere"
 @onready var reload_timer := $reload_timer
 
 func reload() -> bool:
@@ -18,9 +17,18 @@ func reload() -> bool:
 		return true;
 	else:
 		return false
+
+func deactivate():
+	visible = false
+	pass
 	
+func activate():
+	player_anim.play("activate")
+	visible = true
+	await get_tree().create_timer(0.5).timeout
+	pass
+
 func shoot() -> bool:
-	print(player_anim.is_playing())
 	if ammo_in_mag > 0 and !player_anim.is_playing():
 		ammo_in_mag -= 1;
 		player_anim.play("Fire")

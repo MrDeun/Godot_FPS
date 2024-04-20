@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_w6duo"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="3_u54em"]
-[ext_resource type="PackedScene" uid="uid://brpogib7e8cwr" path="res://new_player.tscn" id="4_dwk4t"]
+[ext_resource type="PackedScene" uid="uid://brpogib7e8cwr" path="res://subscenes/new_player.tscn" id="4_dwk4t"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_fjyup"]
 
 [sub_resource type="Resource" id="Resource_0ajku"]
@@ -57,7 +57,7 @@ face_ids = PackedInt32Array(0, 1, 2, 3, 4, 5)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.424024, 0.26496, 0, 0.529919, 0.848048, -0.5, 0.734431, -0.458924, 0, 0, 0)
-light_color = Color(1, 0.709804, 0.286275, 1)
+light_color = Color(1, 0.839893, 0.637727, 1)
 light_energy = 0.7
 shadow_enabled = true
 
@@ -70,7 +70,7 @@ script = ExtResource("3_u54em")
 block_data = SubResource("Resource_0ajku")
 
 [node name="new_player" parent="." instance=ExtResource("4_dwk4t")]
-transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="Block_1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1, -15)

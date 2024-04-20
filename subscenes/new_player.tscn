@@ -1,0 +1,167 @@
+[gd_scene load_steps=14 format=3 uid="uid://brpogib7e8cwr"]
+
+[ext_resource type="Script" path="res://scripts/new_player.gd" id="1_t1rwd"]
+[ext_resource type="Script" path="res://first_person_camera.gd" id="2_7wlx7"]
+[ext_resource type="PackedScene" uid="uid://cqtbkis2e4in1" path="res://subscenes/machine_gun.tscn" id="2_krh0t"]
+[ext_resource type="Script" path="res://Weapon_Rig.gd" id="3_gcdvv"]
+[ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://Textures/Sci-Fi Game Icons/Black/slice16.png" id="5_q2ruw"]
+[ext_resource type="Script" path="res://scripts/box_shaker.gd" id="6_1xjgj"]
+[ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://Textures/fonts/e1234/E1234.ttf" id="7_o07o0"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="8_ks4w3"]
+[ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://subscenes/Pistol.tscn" id="8_r4cwq"]
+[ext_resource type="Texture2D" uid="uid://cfqu7ih3j7kvu" path="res://Textures/Sci-Fi Game Icons/Black/slice15.png" id="9_ybl2u"]
+[ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="11_wmaui"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_36nep"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_002eu"]
+line_spacing = 1.0
+font = ExtResource("7_o07o0")
+font_size = 150
+font_color = Color(0, 0.705882, 0, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="new_player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_t1rwd")
+
+[node name="PlayerInterface" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="PlayerInterface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="PlayerInterface/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+positional_shadow_atlas_size = 4096
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="weapon_camera" type="Camera3D" parent="PlayerInterface/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29919, 0)
+cull_mask = 1047554
+fov = 90.0
+
+[node name="Weapon_Rig" type="Node3D" parent="PlayerInterface/SubViewportContainer/SubViewport/weapon_camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0319332, -0.415169, 0.421662)
+script = ExtResource("3_gcdvv")
+
+[node name="MachineGun" parent="PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig" instance=ExtResource("2_krh0t")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.239457, 0.126252, -0.854668)
+visible = false
+
+[node name="Pistol" parent="PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig" instance=ExtResource("8_r4cwq")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 0.283765, 0.139529, -1.08986)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="PlayerInterface/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 2.23753, -0.967191)
+light_energy = 0.2
+
+[node name="BoxHitbox" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_36nep")
+
+[node name="first_person_camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.555556, 0, 0, 0, 1, 0, 0.3, 0)
+cull_mask = 1048573
+fov = 90.0
+script = ExtResource("2_7wlx7")
+
+[node name="hit_trail" type="RayCast3D" parent="first_person_camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
+target_position = Vector3(0, 0, -1)
+
+[node name="HUD2" type="Control" parent="first_person_camera"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ammo" type="Control" parent="first_person_camera/HUD2"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 275.0
+offset_bottom = 275.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="first_person_camera/HUD2/Ammo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 288.0
+offset_bottom = 172.0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+script = ExtResource("6_1xjgj")
+
+[node name="Label" type="Label" parent="first_person_camera/HUD2/Ammo/HBoxContainer"]
+layout_mode = 2
+text = "8"
+label_settings = SubResource("LabelSettings_002eu")
+script = ExtResource("8_ks4w3")
+
+[node name="TextureRect" type="TextureRect" parent="first_person_camera/HUD2/Ammo/HBoxContainer"]
+modulate = Color(0, 0.643137, 0, 1)
+layout_mode = 2
+texture = ExtResource("9_ybl2u")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Health" type="Control" parent="first_person_camera/HUD2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="first_person_camera/HUD2/Health"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -535.0
+offset_top = 275.0
+offset_right = -60.0
+offset_bottom = 447.0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="first_person_camera/HUD2/Health/HBoxContainer"]
+modulate = Color(0, 0.705882, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("5_q2ruw")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="first_person_camera/HUD2/Health/HBoxContainer"]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_002eu")
+
+[node name="Crooshair_texture" type="TextureRect" parent="first_person_camera/HUD2"]
+modulate = Color(0, 0.607843, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_wmaui")

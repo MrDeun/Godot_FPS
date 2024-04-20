@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_w6duo"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="3_u54em"]
-[ext_resource type="PackedScene" uid="uid://brpogib7e8cwr" path="res://new_player.tscn" id="4_dwk4t"]
+[ext_resource type="PackedScene" uid="uid://brpogib7e8cwr" path="res://subscenes/new_player.tscn" id="4_dwk4t"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_fjyup"]
+
 
 [sub_resource type="Resource" id="Resource_0ajku"]
 script = ExtResource("4_fjyup")

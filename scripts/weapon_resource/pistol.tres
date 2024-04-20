@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://csmxs0rtgxjj3"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource/weapon_resource.gd" id="1_r2kxq"]
+
+[resource]
+script = ExtResource("1_r2kxq")
+Weapon_Name = "Pistol"
+Active_Anim = "activate"
+Shoot_Anim = "Fire"
+Reload_Anim = "Reload"
+OutOfAmmo = "click"
+Current_Ammo = 8
+Reserve_Ammo = 0
+Magazine = 0
+Max_Ammo = 80
+Auto_Fire = false

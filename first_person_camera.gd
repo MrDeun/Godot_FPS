@@ -4,4 +4,4 @@ func _ready():
 	pass
 	
 func _process(delta):
-	position = Vector3()
+	pass

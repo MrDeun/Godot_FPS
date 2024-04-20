@@ -24,7 +24,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var sphere_collision := $"../HighCalibler/Sphere"
 @onready var pistol := $Neck/PlayerCamera/weapon_rigging/Pistol
 @onready var ammo_count := $Neck/PlayerCamera/HUD/Ammo/HBoxContainer
-@onready var decal_scene := preload("res://decal.tscn")
+@onready var decal_scene := preload("res://subscenes/decal.tscn")
 
 func _pistol_fire():
 	var fire_success: bool = pistol.shoot()

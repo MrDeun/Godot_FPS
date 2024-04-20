@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://i36mf08l1fmk"]
+
+[ext_resource type="ArrayMesh" uid="uid://culq6cjt7h45h" path="res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj" id="1_5rgse"]
+[ext_resource type="Script" path="res://PickableMagnum.gd" id="2_q87ft"]
+[ext_resource type="Script" path="res://Sphere.gd" id="3_u3h3k"]
+[ext_resource type="Script" path="res://Collision.gd" id="4_igv5c"]
+[ext_resource type="Script" path="res://OmniLight3D.gd" id="5_6wbtl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ckobr"]
+radius = 0.446351
+
+[node name="HighCalibler" type="MeshInstance3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+layers = 3
+mesh = ExtResource("1_5rgse")
+script = ExtResource("2_q87ft")
+
+[node name="Sphere" type="StaticBody3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.27818, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_u3h3k")
+
+[node name="player_collision" type="Area3D" parent="Sphere"]
+
+[node name="Collision" type="CollisionShape3D" parent="Sphere/player_collision"]
+shape = SubResource("SphereShape3D_ckobr")
+script = ExtResource("4_igv5c")
+
+[node name="raycast_collision" type="CollisionShape3D" parent="Sphere"]
+shape = SubResource("SphereShape3D_ckobr")
+script = ExtResource("4_igv5c")
+
+[node name="Green_Bulb" type="OmniLight3D" parent="Sphere"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.0
+script = ExtResource("5_6wbtl")
+
+[connection signal="body_entered" from="Sphere/player_collision" to="." method="_on_area_3d_body_entered"]
