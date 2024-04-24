@@ -1,8 +1,8 @@
 extends Node3D
 
 @onready var anim_play = $machine_anim
+@export var current_ammo: int
 const max_ammo = 500
-var current_ammo = 100
 
 const ray_range = 100
 

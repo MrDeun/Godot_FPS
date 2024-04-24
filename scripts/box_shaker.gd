@@ -26,7 +26,7 @@ func _process(delta):
 
 	
 func give_shake():
-	randomStrength = 7.5
+	randomStrength = 5.0
 	pass	
 
 func randomOffset() -> Vector2:

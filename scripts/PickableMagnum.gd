@@ -16,5 +16,5 @@ func _process(delta):
 	if(time_state > 1000):
 		time_state = 0
 	rotation.y += delta*4.0;
-	position.y = initial_position + 0.33*sin(time_state*5.0);
+	position.y = initial_position + 0.33*sin(time_state*5.0)/1;
 	pass

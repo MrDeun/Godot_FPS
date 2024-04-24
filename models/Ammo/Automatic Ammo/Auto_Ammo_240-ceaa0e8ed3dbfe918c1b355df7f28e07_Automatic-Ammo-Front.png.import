@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://beotd3q5y72h6"
+path.s3tc="res://.godot/imported/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front.png-a053d79184f4a5ac3c30eba42ba3f80c.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "e6aec70b63e850fe4106eda883316da1"
+}
+
+[deps]
+
+source_file="res://models/Ammo/Automatic Ammo/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front.png"
+dest_files=["res://.godot/imported/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front.png-a053d79184f4a5ac3c30eba42ba3f80c.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

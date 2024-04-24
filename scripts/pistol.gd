@@ -9,9 +9,11 @@ const ray_range = 100
 
 @onready var player_anim := $anim_player
 @onready var reload_timer := $reload_timer
+@onready var gun_raycast := $"../../../../../../first_person_camera/hit_trail"
+@onready var ammo_hud := $"../../../HUD2/Ammo/HBoxContainer/PanelContainer3/Label"
 
 func reload() -> bool:
-	if reserve > 0 and !player_anim.is_playing() and ammo_in_mag != 8:
+	if reserve > 0 and !player_anim.is_playing() and ammo_in_mag != mag_size:
 		player_anim.play("Reload")
 		reload_timer.start()
 		return true;
@@ -55,5 +57,6 @@ func _on_reload_timer_timeout():
 	else:
 		ammo_in_mag += missing
 		reserve -= missing
+	ammo_hud._ready() 
 	
 	

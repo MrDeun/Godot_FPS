@@ -1,5 +1,5 @@
+StandardMaterial3D
 Weapon_Resource
 Resource
-StandardMaterial3D
 ImageTexture
 MeshTexture

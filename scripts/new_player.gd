@@ -3,11 +3,15 @@ extends CharacterBody3D
 @onready var camera = $first_person_camera
 @onready var weapon_camera = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera
 
+@onready var weapon_rig = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig
 @onready var pistol = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/Pistol
-@onready var auto = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/MachineGun
 @onready var gun_raycast = $first_person_camera/hit_trail
+@onready var ammo_hud := $PlayerInterface/SubViewportContainer/SubViewport/HUD2/Ammo/HBoxContainer
 
-
+@onready var decal_scene = preload("res://subscenes/decal.tscn")
+#Auto's readies
+@onready var auto = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/MachineGun
+@onready var auto_pickup = $audio_files/auto_ammo_pickup
 var CameraRotation = Vector2(0,0)
 var MouseSense = 0.2001
 const SPEED = 10.0
@@ -25,17 +29,56 @@ var current_weapon = weapons.PISTOL
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func grant_ammo(name:String,amount:int) -> bool:
+	match name:
+		"auto_ammo":
+			if(auto.current_ammo != auto.max_ammo):
+				auto.current_ammo = min(auto.current_ammo + amount,auto.max_ammo)
+				return true
+			else:
+				return false
+		_:
+			print("Collectible not implemented!")
+			return false
+
 func _fire_auto():
-	gun_raycast.position.z *= auto.ray_range
-	var fire_success: bool = auto.fire()
-	print("AUTO STATUS: " + str(fire_success))
-	gun_raycast.position.z /= auto.ray_range
+	#gun_raycast.target_position.z *= auto.ray_range
+	if auto.fire():
+		ammo_hud.give_shake()
+		var target = gun_raycast.get_collider()
+		var col_normal = gun_raycast.get_collision_normal()
+		var col_point = gun_raycast.get_collision_point()
+		if gun_raycast.is_colliding() and target.get_collision_layer_value(2):
+			target.got_hit()
+		elif target != null:
+			var b_decal = decal_scene.instantiate()
+			target.add_child(b_decal)
+			b_decal.global_position = col_point
+			if col_normal == Vector3.DOWN:
+				b_decal.rotation_degrees.x = 90
+			elif col_normal != Vector3.UP:
+				b_decal.look_at(col_point - col_normal, Vector3(0,1,0))
+	#gun_raycast.target_position.z /- auto.ray_range
 	pass
 
 func _fire_pistol():
-	gun_raycast.position.z *= pistol.ray_range
-	var fire_success: bool = pistol.shoot()
-	gun_raycast.position.z /= pistol.ray_range
+	#gun_raycast.target_position.z = -pistol.ray_range
+	if pistol.shoot():
+		ammo_hud.give_shake()
+		var target = gun_raycast.get_collider()
+		var col_normal = gun_raycast.get_collision_normal()
+		var col_point = gun_raycast.get_collision_point()
+		if gun_raycast.is_colliding() and target.get_collision_layer_value(2):
+			target.got_hit()
+		elif target != null:
+			var b_decal = decal_scene.instantiate()
+			target.add_child(b_decal)
+			b_decal.global_position = col_point
+			if col_normal == Vector3.DOWN:
+				b_decal.rotation_degrees.x = 90
+			elif col_normal != Vector3.UP:
+				b_decal.look_at(col_point - col_normal, Vector3(0,1,0))
+	#gun_raycast.target_position.z = -1
 	pass
 
 func shoot():
@@ -64,14 +107,15 @@ func switch_weapon(new_weapon: weapons):
 		activate_weapon(new_weapon)
 		await get_tree().create_timer(0.5).timeout
 		current_weapon = new_weapon
+		
 		can_shoot = true
-
+func play_sound():
+	auto_pickup.play()
+	pass
 
 func _input(event):
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and can_shoot:
-		shoot()
 		
 	if event.is_action_pressed("magnum"):
 		switch_weapon(weapons.PISTOL)
@@ -80,7 +124,7 @@ func _input(event):
 		
 	if event.is_action_pressed("reload"):
 		if current_weapon == weapons.PISTOL:
-			pistol.reload()
+			pistol.reload()	
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -94,13 +138,18 @@ func deactivate_weapon():
 			pistol.deactivate()
 		weapons.AUTO:
 			auto.deactivate()
-	
+var time_stamp = 0
 func _process(delta):
+	if Input.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and can_shoot:
+		shoot()
 	weapon_camera.set_global_transform(camera.get_global_transform())
 func _physics_process(delta):
-	# Add the gravity.
+	time_stamp += delta
+	if time_stamp > 10000:
+		time_stamp = 0
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -113,8 +162,16 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if is_on_floor():
+			weapon_rig.position.x += 0.005 * sin(time_stamp*10)
+			weapon_rig.position.y += 0.0025 * sin(time_stamp*20)
+		else:
+			weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
+			weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
+		weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
+		
 	move_and_slide()

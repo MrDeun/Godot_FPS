@@ -6,13 +6,13 @@
 [ext_resource type="Script" path="res://scripts/box_shaker.gd" id="3_no8sh"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="3_y5u5k"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="4_lp3id"]
-[ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://Textures/fonts/e1234/E1234.ttf" id="4_wl8oi"]
+[ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://images/fonts/e1234/E1234.ttf" id="4_wl8oi"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="5_fgt0o"]
 [ext_resource type="Material" uid="uid://scqbucq8c4tx" path="res://Textures/WallBrick/new_standard_material_3d.tres" id="5_nk004"]
 [ext_resource type="Material" uid="uid://dnm4ypqidmmgd" path="res://Textures/Floor/floor_material.tres" id="6_0unwe"]
-[ext_resource type="Texture2D" uid="uid://cfqu7ih3j7kvu" path="res://Textures/Sci-Fi Game Icons/Black/slice15.png" id="6_uqx70"]
+[ext_resource type="Texture2D" uid="uid://cfqu7ih3j7kvu" path="res://images/Sci-Fi Game Icons/Black/slice15.png" id="6_uqx70"]
 [ext_resource type="Script" path="res://scripts/FlickerLight.gd" id="7_agybe"]
-[ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://Textures/Sci-Fi Game Icons/Black/slice16.png" id="7_n64cq"]
+[ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://images/Sci-Fi Game Icons/Black/slice16.png" id="7_n64cq"]
 [ext_resource type="Script" path="res://scripts/PickableMagnum.gd" id="8_oqqvk"]
 [ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="8_y6iti"]
 [ext_resource type="Script" path="res://scripts/weapon_rigging.gd" id="9_nqyp8"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scripts/OmniLight3D.gd" id="12_1avoh"]
 [ext_resource type="Script" path="res://scripts/Sphere.gd" id="12_2h4xq"]
 [ext_resource type="Script" path="res://scripts/Collision.gd" id="12_jcrge"]
+
 
 
 [sub_resource type="Environment" id="Environment_yyttt"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Fps"
-run/main_scene="res://weapon_switch_testing.tscn"
+run/main_scene="res://func_godot_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -32,7 +32,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg")
+enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/func_godot/plugin.cfg")
 
 [input]
 
@@ -90,7 +90,12 @@ machine_gun={
 [layer_names]
 
 3d_physics/layer_2="Shootable"
+3d_physics/layer_3="Player_Pickup"
 
 [physics]
 
 3d/default_gravity=30.0
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true

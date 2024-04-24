@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_g0fxb"]
 [ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="3_2gsju"]
 [ext_resource type="Script" path="res://scripts/box_shaker.gd" id="4_xecq6"]
-[ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://Textures/fonts/e1234/E1234.ttf" id="5_cqr2d"]
+[ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://images/fonts/e1234/E1234.ttf" id="5_cqr2d"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="6_bhxcp"]
-[ext_resource type="Texture2D" uid="uid://cfqu7ih3j7kvu" path="res://Textures/Sci-Fi Game Icons/Black/slice15.png" id="7_uyh0h"]
-[ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://Textures/Sci-Fi Game Icons/Black/slice16.png" id="8_lnyun"]
+[ext_resource type="Texture2D" uid="uid://cfqu7ih3j7kvu" path="res://images/Sci-Fi Game Icons/Black/slice15.png" id="7_uyh0h"]
+[ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://images/Sci-Fi Game Icons/Black/slice16.png" id="8_lnyun"]
 [ext_resource type="Script" path="res://scripts/weapon_rigging.gd" id="9_77dvd"]
 [ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://subscenes/Pistol.tscn" id="9_no4r2"]
 [ext_resource type="PackedScene" uid="uid://ddwvo0we58w5u" path="res://subscenes/melee.tscn" id="10_83lwh"]
+
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_so11r"]
 
