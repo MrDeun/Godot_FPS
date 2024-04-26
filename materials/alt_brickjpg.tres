@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b78ma4noeq3d7"]
 
-[ext_resource type="Texture2D" uid="uid://i1de6mx1u1yb" path="res://trench_textures/textures/alt_brickjpg.jpg" id="1_tqo8x"]
+[ext_resource type="Texture2D" uid="uid://i1de6mx1u1yb" path="res://trench_assets/textures/alt_brickjpg.jpg" id="1_tqo8x"]
 [ext_resource type="Texture2D" uid="uid://cls5seha5ou57" path="res://Textures/alt_brickjpg_n.jpg" id="2_7b1q4"]
 
 [resource]
