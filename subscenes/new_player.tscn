@@ -9,11 +9,11 @@
 [ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://images/fonts/e1234/E1234.ttf" id="4_skaxy"]
 [ext_resource type="Script" path="res://scripts/box_shaker.gd" id="6_1xjgj"]
 [ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://images/Sci-Fi Game Icons/Black/slice16.png" id="6_bu0ou"]
+[ext_resource type="Texture2D" uid="uid://b3afwj2shjcsq" path="res://Textures/crosshair003.png" id="8_b8r1w"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="8_ks4w3"]
 [ext_resource type="FontFile" uid="uid://ecxtheu7sly3" path="res://images/fonts/liquid_crystal/LiquidCrystal-Bold.otf" id="8_lmwpj"]
 [ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://subscenes/Pistol.tscn" id="8_r4cwq"]
 [ext_resource type="Script" path="res://subscenes/Message.gd" id="9_ukag0"]
-[ext_resource type="Texture2D" uid="uid://cfjstmsfda717" path="res://Textures/New Piskel-1.png.png" id="11_wmaui"]
 [ext_resource type="AudioStream" uid="uid://svds8nnks5go" path="res://sound effect/auto_pickup.wav" id="15_vgyxg"]
 
 [sub_resource type="Environment" id="Environment_48420"]
@@ -179,7 +179,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_wmaui")
+texture = ExtResource("8_b8r1w")
 
 [node name="Message" type="Label" parent="PlayerInterface/SubViewportContainer/SubViewport/HUD2"]
 layout_mode = 1
@@ -211,6 +211,7 @@ script = ExtResource("3_gcdvv")
 [node name="MachineGun" parent="PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig" instance=ExtResource("2_krh0t")]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.239457, 0.126252, -0.902404)
 visible = false
+current_ammo = 0
 
 [node name="Pistol" parent="PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig" instance=ExtResource("8_r4cwq")]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 0.283765, 0.139529, -1.08986)

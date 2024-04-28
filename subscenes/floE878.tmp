@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://tereapeor0mm"]
+
+[ext_resource type="Script" path="res://subscenes/floating_machinegun.gd" id="1_oguux"]
+[ext_resource type="PackedScene" uid="uid://c1yud820f28sn" path="res://subscenes/mp5_scene.tscn" id="1_xa3ie"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t0u60"]
+radius = 2.37466
+
+[node name="floating_machinegun" type="Node3D"]
+script = ExtResource("1_oguux")
+
+[node name="Root Scene" parent="." instance=ExtResource("1_xa3ie")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_t0u60")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

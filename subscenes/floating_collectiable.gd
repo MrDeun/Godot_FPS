@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var machine_gun = $"."
-@onready var aud_player = $AudioStreamPlayer3D
+@onready var body = $"../new_player"
 @export var msg_ref: Label 
 var initial_position = position.y
 var time_state = 0.0

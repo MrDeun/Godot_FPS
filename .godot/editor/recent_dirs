@@ -1,13 +1,12 @@
-res://trench_assets/textures
-res://materials
-res://styles
-res://
-res://maps
-C:/Users/Patryk/GameDev/Godot_FPS/maps
-C:/Users/Patryk/Downloads/TrenchBroom-Win64-v2024.1-RC2-Release
+res://scripts
 res://subscenes
+res://maps
+res://materials
+res://
+res://trench_assets
+F:/Download/TrenchBroom-Win64-v2024.1-Release/games
+res://trench_assets/entities
+F:/Program Files (x86)/Steam/steamapps/common/Godot Engine/themes
+res://trench_assets/textures
+res://styles
 res://scripts/weapon_resource
-C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/FBX2glTF-windows-x86_64
-res://Textures/Floor
-res://Textures/WallBrick
-C:/Program Files (x86)/Steam/steamapps/common/Blender

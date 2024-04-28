@@ -24,10 +24,22 @@ enum weapons {
 	AUTO
 }
 
+var weapon_stack = [weapons.PISTOL]
+
 var current_weapon = weapons.PISTOL
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+func grant_weapon(name:String) -> bool:
+	if name == "auto" and weapons.AUTO not in weapon_stack:
+		weapon_stack.append(weapons.AUTO)
+		switch_weapon(weapons.AUTO)
+		grant_ammo("auto_ammo",100)
+		return true
+	else:
+		return grant_ammo("auto_ammo",100)
+		
 
 func grant_ammo(name:String,amount:int) -> bool:
 	match name:
@@ -101,13 +113,12 @@ func activate_weapon(new_weapon:weapons):
 			auto.activate()
 
 func switch_weapon(new_weapon: weapons):
-	if new_weapon != current_weapon:
+	if new_weapon != current_weapon and new_weapon in weapon_stack:
 		can_shoot = false
 		deactivate_weapon()
 		activate_weapon(new_weapon)
 		await get_tree().create_timer(0.5).timeout
 		current_weapon = new_weapon
-		
 		can_shoot = true
 func play_sound():
 	auto_pickup.play()

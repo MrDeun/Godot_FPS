@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=4 format=3 uid="uid://b8dh850fa4o3c"]
+
+[ext_resource type="PackedScene" uid="uid://dau03xjaml4wa" path="res://subscenes/machine_ammo.tscn" id="1_elf4o"]
+[ext_resource type="PackedScene" uid="uid://brpogib7e8cwr" path="res://subscenes/new_player.tscn" id="2_ym6ad"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="3_7k2ja"]
+
+[resource]
+script = ExtResource("3_7k2ja")
+export_file = false
+model_key_word_supported = true
+fgd_name = "BarrelOTime"
+base_fgd_files = Array[Resource]([ExtResource("1_elf4o"), ExtResource("2_ym6ad")])
+entity_definitions = Array[Resource]([])

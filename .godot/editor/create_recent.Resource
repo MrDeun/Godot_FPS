@@ -1,4 +1,7 @@
 StandardMaterial3D
+trenchBroomGameConfig
+FuncGodotFGDFile
+FuncGodotFGDPointClass
 Weapon_Resource
 Resource
 ImageTexture

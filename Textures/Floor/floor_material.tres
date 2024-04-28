@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dnm4ypqidmmgd"]
-
-[ext_resource type="Texture2D" uid="uid://bo5q6apwm6vti" path="res://Textures/Floor/alt_floorjpg.jpg" id="1_ogrkd"]
-[ext_resource type="Texture2D" uid="uid://cdrgurte5jbs6" path="res://Textures/Floor/alt_floorjpg_n.jpg" id="2_wfp4n"]
-
-[resource]
-albedo_texture = ExtResource("1_ogrkd")
-normal_enabled = true
-normal_texture = ExtResource("2_wfp4n")
