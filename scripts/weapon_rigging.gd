@@ -10,7 +10,6 @@ var next_weapon: String
 @export var starter_weapons: Array[String]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	init()pass # Replace with function body.
 
 func init():
 	pass

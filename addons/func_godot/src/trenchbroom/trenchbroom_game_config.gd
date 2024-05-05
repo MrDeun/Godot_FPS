@@ -1,7 +1,7 @@
 @tool
 @icon("res://addons/func_godot/icons/icon_godot_ranger.svg")
 ## Defines a game in TrenchBroom to express a set of entity definitions and editor behaviors.
-class_name trenchBroomGameConfig
+class_name TrenchBroomGameConfig
 extends Resource
 
 ## Button to export / update this game's configuration and FGD file in the TrenchBroom Games Path.

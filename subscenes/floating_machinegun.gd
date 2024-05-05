@@ -12,7 +12,7 @@ func _process(delta):
 	if(time_state > 1000):
 		time_state = 0
 	rotation.y += delta*4.0;
-	position.y += 0.33*sin(time_state*5.0)/10;
+	position.y += 0.2*sin(time_state*5.0)/10;
 	pass
 
 

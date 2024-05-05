@@ -4,6 +4,8 @@ const mag_size = 8
 const max_reserve = 80
 const ray_range = 100
 
+var damage = 30
+
 @export var ammo_in_mag = 8
 @export var reserve = 32
 

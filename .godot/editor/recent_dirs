@@ -1,10 +1,13 @@
-res://scripts
 res://subscenes
-res://maps
+res://lightbake
 res://materials
+F:/Download/TrenchBroom-Win64-v2024.1-Release/games
+res://maps
+F:/GameDev/Godot_FPS/maps
+res://models/Enemies/monster/fbx
+res://scripts
 res://
 res://trench_assets
-F:/Download/TrenchBroom-Win64-v2024.1-Release/games
 res://trench_assets/entities
 F:/Program Files (x86)/Steam/steamapps/common/Godot Engine/themes
 res://trench_assets/textures

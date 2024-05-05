@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://tereapeor0mm"]
+[gd_scene load_steps=9 format=3 uid="uid://tereapeor0mm"]
 
 [ext_resource type="Script" path="res://subscenes/floating_machinegun.gd" id="1_oguux"]
 [ext_resource type="PackedScene" uid="uid://c1yud820f28sn" path="res://subscenes/mp5_scene.tscn" id="1_xa3ie"]
+[ext_resource type="Script" path="res://subscenes/XZ_Orbit.gd" id="3_g7khm"]
+[ext_resource type="Script" path="res://subscenes/XY_Orbit.gd" id="4_i0dlx"]
+[ext_resource type="Script" path="res://subscenes/YZ_Orbit.gd" id="5_w3jtq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t0u60"]
 radius = 2.37466
+
+[sub_resource type="SphereMesh" id="SphereMesh_yk7we"]
+radius = 0.15
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sj5e2"]
+transparency = 1
+blend_mode = 3
+emission_enabled = true
+emission = Color(0.230641, 0.45758, 1, 1)
+emission_energy_multiplier = 15.12
 
 [node name="floating_machinegun" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
@@ -17,9 +31,25 @@ script = ExtResource("1_oguux")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_t0u60")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(0, 1, 0, 1)
-light_energy = 15.08
-omni_range = 0.580144
+[node name="CenterOfOrbits" type="Node3D" parent="."]
+
+[node name="XZ_Orbit" type="MeshInstance3D" parent="CenterOfOrbits"]
+mesh = SubResource("SphereMesh_yk7we")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sj5e2")
+script = ExtResource("3_g7khm")
+
+[node name="XY_Orbit" type="MeshInstance3D" parent="CenterOfOrbits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+mesh = SubResource("SphereMesh_yk7we")
+surface_material_override/0 = SubResource("StandardMaterial3D_sj5e2")
+script = ExtResource("4_i0dlx")
+
+[node name="YZ_Orbit" type="MeshInstance3D" parent="CenterOfOrbits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+mesh = SubResource("SphereMesh_yk7we")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sj5e2")
+script = ExtResource("5_w3jtq")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

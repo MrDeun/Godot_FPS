@@ -14,8 +14,12 @@ extends CharacterBody3D
 @onready var auto_pickup = $audio_files/auto_ammo_pickup
 var CameraRotation = Vector2(0,0)
 var MouseSense = 0.2001
-const SPEED = 10.0
+var player_velocity = 0.0
+const ACCELARATION = 0.7
+const max_speed = 8.0
 const JUMP_VELOCITY = 12.0
+const default_target = Vector3(0,0,-50)
+
 
 var can_shoot = true
 
@@ -54,14 +58,15 @@ func grant_ammo(name:String,amount:int) -> bool:
 			return false
 
 func _fire_auto():
-	#gun_raycast.target_position.z *= auto.ray_range
+	gun_raycast.target_position.x = randf_range(-auto.spread,auto.spread)
+	gun_raycast.target_position.y = randf_range(-auto.spread,auto.spread)
 	if auto.fire():
 		ammo_hud.give_shake()
 		var target = gun_raycast.get_collider()
 		var col_normal = gun_raycast.get_collision_normal()
 		var col_point = gun_raycast.get_collision_point()
 		if gun_raycast.is_colliding() and target.get_collision_layer_value(2):
-			target.got_hit()
+			target.got_hit(auto.damage)
 		elif target != null:
 			var b_decal = decal_scene.instantiate()
 			target.add_child(b_decal)
@@ -70,7 +75,7 @@ func _fire_auto():
 				b_decal.rotation_degrees.x = 90
 			elif col_normal != Vector3.UP:
 				b_decal.look_at(col_point - col_normal, Vector3(0,1,0))
-	#gun_raycast.target_position.z /- auto.ray_range
+	gun_raycast.target_position = default_target
 	pass
 
 func _fire_pistol():
@@ -81,7 +86,7 @@ func _fire_pistol():
 		var col_normal = gun_raycast.get_collision_normal()
 		var col_point = gun_raycast.get_collision_point()
 		if gun_raycast.is_colliding() and target.get_collision_layer_value(2):
-			target.got_hit()
+			target.got_hit(pistol.damage)
 		elif target != null:
 			var b_decal = decal_scene.instantiate()
 			target.add_child(b_decal)
@@ -171,17 +176,20 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		player_velocity += ACCELARATION
+		player_velocity = clamp(player_velocity,0,max_speed)		
+		velocity.x = direction.x * player_velocity
+		velocity.z = direction.z * player_velocity
 		if is_on_floor():
 			weapon_rig.position.x += 0.005 * sin(time_stamp*10)
 			weapon_rig.position.y += 0.0025 * sin(time_stamp*20)
 		else:
 			weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
 			weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	else:	
+		player_velocity = lerpf(player_velocity,0,0.1)
+		velocity.x = direction.x * player_velocity
+		velocity.z = direction.z * player_velocity
 		weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
 		weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
 		

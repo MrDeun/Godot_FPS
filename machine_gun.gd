@@ -4,7 +4,9 @@ extends Node3D
 @export var current_ammo: int
 const max_ammo = 500
 
-const ray_range = 100
+var damage = 15
+var ray_range = 100
+var spread = 500
 
 func deactivate():
 	visible = false

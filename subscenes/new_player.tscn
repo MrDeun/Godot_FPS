@@ -226,7 +226,7 @@ fov = 90.0
 script = ExtResource("2_7wlx7")
 
 [node name="hit_trail" type="RayCast3D" parent="first_person_camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.927147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00392234, -0.0582292)
 target_position = Vector3(0, 0, -50)
 collision_mask = 3
 

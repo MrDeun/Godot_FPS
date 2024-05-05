@@ -240,6 +240,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Root Scene:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_c02eu"]
 resource_name = "activate"
@@ -313,6 +325,18 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Root Scene:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.06, 0.075),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0174533, 0, 0), Vector3(-0.0174533, 0, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_121lf"]
 _data = {
@@ -327,13 +351,13 @@ script = ExtResource("1_ylqw8")
 current_ammo = 460
 
 [node name="Root Scene" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, -5.82166, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.82166, 0)
 
 [node name="RootNode" type="Node3D" parent="Root Scene"]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 0, 0)
 
 [node name="MP5KBody" type="MeshInstance3D" parent="Root Scene/RootNode"]
-transform = Transform3D(100, 0, 0, 0, 100, -1.62921e-05, 0, 1.62921e-05, 100, 0, 0, 0)
+transform = Transform3D(99.6776, 0.214648, 8.0205, 9.85845e-08, 99.9642, -2.67529, -8.02337, 2.66666, 99.6419, -0.225758, -2.09808e-05, -0.176934)
 layers = 2
 mesh = SubResource("ArrayMesh_hi5mb")
 skeleton = NodePath("")

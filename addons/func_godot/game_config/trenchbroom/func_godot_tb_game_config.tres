@@ -11,7 +11,7 @@
 [resource]
 script = ExtResource("2_ns6ah")
 export_file = false
-game_name = "FuncGodot"
+game_name = "BarrelOTime"
 icon = ExtResource("6_tex5j")
 map_formats = Array[Dictionary]([{
 "format": "Valve",

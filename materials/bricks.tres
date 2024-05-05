@@ -1,15 +1,16 @@
 [gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bb081745dn66u"]
 
+[ext_resource type="Texture2D" uid="uid://ecvjnqi5t3kl" path="res://Textures/wall_brick/Bricks019_1K-PNG/Bricks019_1K-PNG_Color.png" id="1_d8aa8"]
 [ext_resource type="Texture2D" uid="uid://c4lsqfxmrxn01" path="res://Textures/wall_brick/bricks_diff_1k.jpg" id="1_yvhaa"]
-[ext_resource type="Texture2D" uid="uid://dyuufy50gq17e" path="res://Textures/wall_brick/bricks_diff_1k_n.jpg" id="2_vfy4e"]
-[ext_resource type="Texture2D" uid="uid://blt7a7hn60avo" path="res://Textures/wall_brick/bricks_rough_1k.jpg" id="3_1xer7"]
+[ext_resource type="Texture2D" uid="uid://bmvo1owcbmc2e" path="res://Textures/wall_brick/Bricks019_1K-PNG/Bricks019_1K-PNG_NormalDX.png" id="2_4p7sv"]
 
 [resource]
 albedo_color = Color(0.76662, 0.76662, 0.76662, 1)
-albedo_texture = ExtResource("1_yvhaa")
-roughness_texture = ExtResource("3_1xer7")
+albedo_texture = ExtResource("1_d8aa8")
+roughness = 0.0
 normal_enabled = true
-normal_scale = 3.2
-normal_texture = ExtResource("2_vfy4e")
+normal_texture = ExtResource("2_4p7sv")
+backlight = Color(0.732217, 0.546487, 0.599472, 1)
 refraction_enabled = true
 refraction_texture = ExtResource("1_yvhaa")
+uv2_triplanar = true
