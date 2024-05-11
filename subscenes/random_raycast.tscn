@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy088wiqd0m16"]
+
+[ext_resource type="Script" path="res://random_raycast.gd" id="1_np038"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -0.0760825, 1.14855, -0.692569)
+
+[node name="random_raycast" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -50)
+collision_mask = 3
+debug_shape_custom_color = Color(1.68458e-06, 0.544919, 0.45835, 1)
+debug_shape_thickness = 5
+script = ExtResource("1_np038")

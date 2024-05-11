@@ -1,3 +1,6 @@
+Node3D
+Camera3D
+RayCast3D
 FogVolume
 AnimationTree
 OmniLight3D
@@ -5,10 +8,7 @@ NavigationAgent3D
 NavigationRegion3D
 CollisionShape3D
 CharacterBody3D
-Node3D
 LightmapGI
 FuncGodotMap
 QodotMap
 MeshInstance3D
-SubViewportContainer
-SubViewport

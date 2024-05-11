@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var health = 150
+var health = 100
 var target = null
 
 const SPEED = 5.0

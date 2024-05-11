@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var ammo_hud := $PlayerInterface/SubViewportContainer/SubViewport/HUD2/Ammo/HBoxContainer
 
 @onready var decal_scene = preload("res://subscenes/decal.tscn")
+@onready var random_raycast = preload("res://subscenes/random_raycast.tscn")
 #Auto's readies
 @onready var auto = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/MachineGun
 @onready var auto_pickup = $audio_files/auto_ammo_pickup
@@ -58,8 +59,7 @@ func grant_ammo(name:String,amount:int) -> bool:
 			return false
 
 func _fire_auto():
-	gun_raycast.target_position.x = randf_range(-auto.spread,auto.spread)
-	gun_raycast.target_position.y = randf_range(-auto.spread,auto.spread)
+	gun_raycast.target_position = Vector3(randf_range(-5,5),randf_range(-5,5),-50)
 	if auto.fire():
 		ammo_hud.give_shake()
 		var target = gun_raycast.get_collider()
