@@ -40,12 +40,14 @@ sdfgi_bounce_feedback = 0.87
 sdfgi_y_scale = 2
 glow_intensity = 1.59
 glow_blend_mode = 0
-fog_enabled = true
 fog_light_color = Color(1, 0.664018, 0.351041, 1)
 fog_light_energy = 1.66
 fog_density = 0.0
 fog_sky_affect = 0.0
-volumetric_fog_length = 6.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.003
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_gi_inject = 0.0
 
 [sub_resource type="FogMaterial" id="FogMaterial_1p8by"]
 density = 8.0

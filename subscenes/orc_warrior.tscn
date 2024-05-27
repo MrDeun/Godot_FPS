@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dwdt44isjksc3"]
+[gd_scene load_steps=25 format=3 uid="uid://dwdt44isjksc3"]
 
 [ext_resource type="Texture2D" uid="uid://bogu48ghejtlc" path="res://models/Enemies/monster/fbx/warriror-aaed431ee663b5d11af9448db4e5f87f_orccyborkampen_Mat_diffuseOriginal.png" id="1_hfvcj"]
 [ext_resource type="Script" path="res://subscenes/orc_warrior.gd" id="1_vj6mx"]
@@ -3278,15 +3278,26 @@ animation = &"root|attackA"
 animation = &"root|walking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5vhky"]
-advance_condition = &"moving"
+reset = false
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k88sc"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8lwwh"]
+advance_mode = 2
+advance_condition = &"attack"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ynu3m"]
-states/Start/position = Vector2(175, 85)
+states/Start/position = Vector2(170, 76)
 states/root|attackA/node = SubResource("AnimationNodeAnimation_hewrr")
 states/root|attackA/position = Vector2(558, 85)
 states/root|walking/node = SubResource("AnimationNodeAnimation_lx13f")
-states/root|walking/position = Vector2(367, 49)
-transitions = ["Start", "root|walking", SubResource("AnimationNodeStateMachineTransition_5vhky")]
+states/root|walking/position = Vector2(358, 65)
+transitions = ["Start", "root|walking", SubResource("AnimationNodeStateMachineTransition_5vhky"), "root|attackA", "root|walking", SubResource("AnimationNodeStateMachineTransition_k88sc"), "root|walking", "root|attackA", SubResource("AnimationNodeStateMachineTransition_8lwwh")]
 
 [node name="orc_warrior" type="CharacterBody3D"]
 collision_layer = 3
@@ -3750,4 +3761,5 @@ root_node = NodePath("../Root Scene")
 root_motion_track = NodePath("RootNode/root/Skeleton3D:root.x")
 tree_root = SubResource("AnimationNodeStateMachine_ynu3m")
 anim_player = NodePath("../Root Scene/AnimationPlayer")
-parameters/conditions/moving = false
+parameters/conditions/attack = false
+parameters/conditions/run = false
