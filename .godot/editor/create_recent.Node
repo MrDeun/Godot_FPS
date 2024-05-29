@@ -1,3 +1,5 @@
+ColorRect
+GPUParticles3D
 Node3D
 Camera3D
 RayCast3D
@@ -11,4 +13,3 @@ CharacterBody3D
 LightmapGI
 FuncGodotMap
 QodotMap
-MeshInstance3D

@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwdt44isjksc3"]
+[gd_scene load_steps=26 format=3 uid="uid://dwdt44isjksc3"]
 
 [ext_resource type="Texture2D" uid="uid://bogu48ghejtlc" path="res://models/Enemies/monster/fbx/warriror-aaed431ee663b5d11af9448db4e5f87f_orccyborkampen_Mat_diffuseOriginal.png" id="1_hfvcj"]
 [ext_resource type="Script" path="res://subscenes/orc_warrior.gd" id="1_vj6mx"]
 [ext_resource type="Texture2D" uid="uid://b3qjwfu2n84bl" path="res://models/Enemies/monster/textures/Bulkywarrior_Difuse.png" id="3_0exlj"]
+[ext_resource type="PackedScene" uid="uid://owgll33esrpb" path="res://subscenes/blood_decal.tscn" id="4_m3jhi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uddmh"]
 resource_name = "basecolor"
@@ -2828,6 +2829,7 @@ tracks/60/keys = PackedFloat32Array(0, 1, -0.411761, 0.594485, -0.567566, -0.393
 
 [sub_resource type="Animation" id="Animation_gfpqc"]
 resource_name = "root|walking"
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -3754,7 +3756,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.914058, 0)
 shape = SubResource("CapsuleShape3D_7wyad")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_height_offset = 0.25
+path_height_offset = 1.0
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Root Scene")
@@ -3763,3 +3765,6 @@ tree_root = SubResource("AnimationNodeStateMachine_ynu3m")
 anim_player = NodePath("../Root Scene/AnimationPlayer")
 parameters/conditions/attack = false
 parameters/conditions/run = false
+
+[node name="BloodDecal" parent="." instance=ExtResource("4_m3jhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57251, 0)

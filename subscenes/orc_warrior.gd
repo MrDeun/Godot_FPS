@@ -10,6 +10,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var player_path = $"../new_player"
 @onready var nav_agent = $NavigationAgent3D
+@onready var blood = $BloodDecal
 
 @onready var anim_tree = $AnimationTree
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -18,12 +19,17 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func got_hit(damage: float):
 	health -= damage
 	print("CURRENT HEALTH: " + str(health))
+	blood.emitting = true
+	await get_tree().create_timer(0.1).timeout
+	blood.emitting = false	
 	if health <= 0:
 		queue_free()
 	return
 
 func _ready():
 	state_machine = anim_tree.get("parameters/playback")
+	blood.emitting = false
+	
 func _target_in_range():
 	return global_position.distance_to(player_path.global_position) <= ATTACK_RANGE
 
@@ -40,7 +46,7 @@ func _physics_process(delta):
 			look_at(Vector3(player_path.global_position.x,global_position.y,player_path.global_position.z),Vector3.UP)
 			pass	
 		
-	anim_tree.set("para",_target_in_range())
+	anim_tree.set("parameters/conditions/attack",_target_in_range())
 	anim_tree.set("parameters/conditions/run", !_target_in_range())
 	
 	state_machine = anim_tree.get("parameters/playback")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://brpogib7e8cwr"]
+[gd_scene load_steps=23 format=3 uid="uid://brpogib7e8cwr"]
 
 [ext_resource type="Script" path="res://scripts/new_player.gd" id="1_t1rwd"]
 [ext_resource type="Script" path="res://first_person_camera.gd" id="2_7wlx7"]
@@ -9,11 +9,13 @@
 [ext_resource type="FontFile" uid="uid://yo3nv03v0eyn" path="res://images/fonts/e1234/E1234.ttf" id="4_skaxy"]
 [ext_resource type="Script" path="res://scripts/box_shaker.gd" id="6_1xjgj"]
 [ext_resource type="Texture2D" uid="uid://cvastlcy7g15x" path="res://images/Sci-Fi Game Icons/Black/slice16.png" id="6_bu0ou"]
+[ext_resource type="Script" path="res://subscenes/Health.gd" id="7_g8ga7"]
 [ext_resource type="Texture2D" uid="uid://b3afwj2shjcsq" path="res://Textures/crosshair003.png" id="8_b8r1w"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="8_ks4w3"]
 [ext_resource type="FontFile" uid="uid://ecxtheu7sly3" path="res://images/fonts/liquid_crystal/LiquidCrystal-Bold.otf" id="8_lmwpj"]
 [ext_resource type="PackedScene" uid="uid://pp1rlhqbj5d1" path="res://subscenes/Pistol.tscn" id="8_r4cwq"]
 [ext_resource type="Script" path="res://subscenes/Message.gd" id="9_ukag0"]
+[ext_resource type="Script" path="res://subscenes/damaged.gd" id="11_qcxvn"]
 [ext_resource type="AudioStream" uid="uid://svds8nnks5go" path="res://sound effect/auto_pickup.wav" id="15_vgyxg"]
 
 [sub_resource type="Environment" id="Environment_48420"]
@@ -127,6 +129,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
+script = ExtResource("7_g8ga7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayerInterface/SubViewportContainer/SubViewport/HUD2/Health"]
 layout_mode = 1
@@ -198,6 +201,15 @@ text = "+50 Automatic Ammo"
 label_settings = SubResource("LabelSettings_5ejch")
 horizontal_alignment = 1
 script = ExtResource("9_ukag0")
+
+[node name="damaged" type="ColorRect" parent="PlayerInterface/SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.388235)
+script = ExtResource("11_qcxvn")
 
 [node name="weapon_camera" type="Camera3D" parent="PlayerInterface/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29919, 0)

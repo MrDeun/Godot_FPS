@@ -7,9 +7,10 @@ extends CharacterBody3D
 @onready var pistol = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/Pistol
 @onready var gun_raycast = $first_person_camera/hit_trail
 @onready var ammo_hud := $PlayerInterface/SubViewportContainer/SubViewport/HUD2/Ammo/HBoxContainer
-
+@onready var health_hud := $PlayerInterface/SubViewportContainer/SubViewport/HUD2/Health
 @onready var decal_scene = preload("res://subscenes/decal.tscn")
 @onready var random_raycast = preload("res://subscenes/random_raycast.tscn")
+@onready var red_screen = $PlayerInterface/SubViewportContainer/SubViewport/damaged
 #Auto's readies
 @onready var auto = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/MachineGun
 @onready var auto_pickup = $audio_files/auto_ammo_pickup
@@ -21,6 +22,8 @@ const max_speed = 8.0
 const JUMP_VELOCITY = 12.0
 const default_target = Vector3(0,0,-50)
 
+var health = 100
+const max_health = 100
 
 var can_shoot = true
 
@@ -57,6 +60,15 @@ func grant_ammo(name:String,amount:int) -> bool:
 		_:
 			print("Collectible not implemented!")
 			return false
+			
+func got_hit(damage:int):
+	health = max(health-damage,0)
+	red_screen.got_hit(damage/max_health)
+	health_hud.update()
+	if health <= 0:
+		pass
+	
+	
 
 func _fire_auto():
 	gun_raycast.target_position = Vector3(randf_range(-5,5),randf_range(-5,5),-50)
@@ -65,16 +77,17 @@ func _fire_auto():
 		var target = gun_raycast.get_collider()
 		var col_normal = gun_raycast.get_collision_normal()
 		var col_point = gun_raycast.get_collision_point()
-		if gun_raycast.is_colliding() and target.get_collision_layer_value(2):
-			target.got_hit(auto.damage)
-		elif target != null:
-			var b_decal = decal_scene.instantiate()
-			target.add_child(b_decal)
-			b_decal.global_position = col_point
-			if col_normal == Vector3.DOWN:
-				b_decal.rotation_degrees.x = 90
-			elif col_normal != Vector3.UP:
-				b_decal.look_at(col_point - col_normal, Vector3(0,1,0))
+		if target != null:
+			if gun_raycast.is_colliding() and target.get_collision_layer_value(2):
+				target.got_hit(auto.damage)
+			elif target != null:
+				var b_decal = decal_scene.instantiate()
+				target.add_child(b_decal)
+				b_decal.global_position = col_point
+				if col_normal == Vector3.DOWN:
+					b_decal.rotation_degrees.x = 90
+				elif col_normal != Vector3.UP:
+					b_decal.look_at(col_point - col_normal, Vector3(0,1,0))
 	gun_raycast.target_position = default_target
 	pass
 
@@ -132,7 +145,8 @@ func play_sound():
 func _input(event):
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		
+	if event.is_action_pressed("DEBUG_damage"):
+		got_hit(10)
 	if event.is_action_pressed("magnum"):
 		switch_weapon(weapons.PISTOL)
 	if event.is_action_pressed("machine_gun"):

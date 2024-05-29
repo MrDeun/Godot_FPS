@@ -4879,40 +4879,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0571, -1.0698, 38.6957)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0571, -1.0698, 38.6957)
 
 [node name="orc_warrior" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, -14.7237, 6.27123, -96.3883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7237, 6.27123, -96.3883)
 
 [node name="orc_warrior5" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.8, 0, 1, 0, -4.37114e-08, -15.6241, 12.2007, -157.95)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.6241, 12.2007, -157.95)
 
 [node name="orc_warrior6" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.8, 0, 1, 0, -4.37114e-08, -15.6241, 12.2007, -161.932)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.6241, 12.2007, -161.932)
 
 [node name="orc_warrior7" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.8, 0, 1, 0, -4.37114e-08, -19.6748, 12.2007, -161.932)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.6748, 12.2007, -161.932)
 
 [node name="orc_warrior8" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.8, 0, 1, 0, -4.37114e-08, -19.6748, 12.2007, -157.801)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.6748, 12.2007, -157.801)
 
 [node name="orc_warrior9" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 3.82341, 12.2007, -159.715)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.82341, 12.2007, -159.715)
 
 [node name="orc_warrior10" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 3.82341, 12.2007, -163.71)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.82341, 12.2007, -163.71)
 
 [node name="orc_warrior11" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 7.54712, 12.2007, -163.71)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.54712, 12.2007, -163.71)
 
 [node name="orc_warrior12" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.8, 0, -1, 0, -4.37114e-08, 7.54712, 12.2007, -160.52)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.54712, 12.2007, -160.52)
 
 [node name="orc_warrior2" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, -11.05, 6.27123, -96.3883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.05, 6.27123, -96.3883)
 
 [node name="orc_warrior3" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, -11.05, 6.27123, -94.2828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.05, 6.27123, -94.2828)
 
 [node name="orc_warrior4" parent="." instance=ExtResource("12_2iu3u")]
-transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, -14.7966, 6.27123, -94.2828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7966, 6.27123, -94.2828)
 
 [node name="hole" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77058, -4.31532, -128.867)
