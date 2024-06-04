@@ -1,10 +1,10 @@
 13236e398de779183e51c2c80f40862e
-::res://::1716881805
+::res://::1717501139
 CharacterBody3D.gd::GDScript::-1::1715616222::0::1::::<>CharacterBody3D<>::
 editor_cache.json::JSON::-1::1710962330::0::1::::<><>::
 first_person_camera.gd::GDScript::-1::1713725600::0::1::::<>Camera3D<>::
 func_godot_test.occ::ArrayOccluder3D::2268983480421717717::1714409494::0::1::::<><>::
-func_godot_test.tscn::PackedScene::4077279860632327327::1716832944::0::1::::<><>::uid://brpogib7e8cwr::::res://subscenes/new_player.tscn<>uid://bb081745dn66u::::res://materials/bricks.tres<>res://addons/func_godot/src/map/func_godot_map.gd<>uid://bkhxcqsquw1yg::::res://addons/func_godot/func_godot_default_map_settings.tres<>uid://y3wfxsmq8bbm::::res://materials/planks.tres<>uid://cyg2snr1w5xw5::::res://addons/func_godot/textures/default_texture.png<>uid://blcuaipeftd1k::::res://materials/ground.tres<>uid://pytaiffu5kdj::::res://materials/metal.tres<>uid://dau03xjaml4wa::::res://subscenes/machine_ammo.tscn<>uid://tereapeor0mm::::res://subscenes/floating_machinegun.tscn<>res://scripts/FlickerLight.gd<>uid://dwdt44isjksc3::::res://subscenes/orc_warrior.tscn
+func_godot_test.tscn::PackedScene::4077279860632327327::1716897980::0::1::::<><>::uid://brpogib7e8cwr::::res://subscenes/new_player.tscn<>uid://bb081745dn66u::::res://materials/bricks.tres<>res://addons/func_godot/src/map/func_godot_map.gd<>uid://bkhxcqsquw1yg::::res://addons/func_godot/func_godot_default_map_settings.tres<>uid://y3wfxsmq8bbm::::res://materials/planks.tres<>uid://cyg2snr1w5xw5::::res://addons/func_godot/textures/default_texture.png<>uid://blcuaipeftd1k::::res://materials/ground.tres<>uid://pytaiffu5kdj::::res://materials/metal.tres<>uid://dau03xjaml4wa::::res://subscenes/machine_ammo.tscn<>uid://tereapeor0mm::::res://subscenes/floating_machinegun.tscn<>res://scripts/FlickerLight.gd<>uid://dwdt44isjksc3::::res://subscenes/orc_warrior.tscn
 GunCamera.gd::GDScript::-1::1713472815::0::1::::<>Camera3D<>::
 icon.png::CompressedTexture2D::5682386384312682030::1708978658::1708978658::1::::<><>::
 icon.svg::CompressedTexture2D::3600379401366732446::1708978658::1714938710::1::::<><>::
@@ -24,10 +24,10 @@ icon.png::CompressedTexture2D::5881446025163923512::1705526933::1713893280::1:::
 icon.svg::CompressedTexture2D::4062792964788404632::1705526962::1714480771::1::::<><>::
 palette.lmp::Resource::246048621070121531::1705569738::1716801257::1::::<><>::res://addons/func_godot/src/import/quake_palette_file.gd
 plugin.cfg::TextFile::-1::1715616223::0::1::::<><>::
-::res://addons/func_godot/fgd/::1716831504
+::res://addons/func_godot/fgd/::1717501085
 func_detail.tres::Resource/Resource::6438689548103014641::1709518989::0::1::::<><>::res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd<>uid://nayxb8n7see2::::res://addons/func_godot/fgd/phong_base.tres
 func_detail_illusionary.tres::Resource/Resource::5322253533803592863::1709518989::0::1::::<><>::uid://nayxb8n7see2::::res://addons/func_godot/fgd/phong_base.tres<>res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd
-func_godot_fgd.tres::Resource/FuncGodotFGDFile::152130930675077::1716831504::0::1::::<><>::res://addons/func_godot/src/fgd/func_godot_fgd_file.gd<>uid://nayxb8n7see2::::res://addons/func_godot/fgd/phong_base.tres<>uid://bdji3873bg32h::::res://addons/func_godot/fgd/worldspawn.tres<>uid://cxy7jnh6d7msn::::res://addons/func_godot/fgd/func_detail.tres<>uid://dg5x44cc7flew::::res://addons/func_godot/fgd/func_illusionary.tres<>uid://ch3e0dix85uhb::::res://addons/func_godot/fgd/func_detail_illusionary.tres
+func_godot_fgd.tres::Resource/FuncGodotFGDFile::152130930675077::1717501085::0::1::::<><>::res://addons/func_godot/src/fgd/func_godot_fgd_file.gd<>uid://nayxb8n7see2::::res://addons/func_godot/fgd/phong_base.tres<>uid://bdji3873bg32h::::res://addons/func_godot/fgd/worldspawn.tres<>uid://cxy7jnh6d7msn::::res://addons/func_godot/fgd/func_detail.tres<>uid://dg5x44cc7flew::::res://addons/func_godot/fgd/func_illusionary.tres<>uid://ch3e0dix85uhb::::res://addons/func_godot/fgd/func_detail_illusionary.tres
 func_illusionary.tres::Resource/Resource::7643776250786767410::1709518989::0::1::::<><>::uid://nayxb8n7see2::::res://addons/func_godot/fgd/phong_base.tres<>res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd
 phong_base.tres::Resource/Resource::913953352516660131::1709518989::0::1::::<><>::res://addons/func_godot/src/fgd/func_godot_fgd_base_class.gd
 worldspawn.tres::Resource/Resource::2616104136543298381::1709518989::0::1::::<><>::res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd
@@ -248,10 +248,11 @@ test_map.2.map::Resource::8935991170142569772::1715616223::1715616249::1::::<><>
 test_map.3.map::Resource::7867053234246368726::1715616223::1715616249::1::::<><>::
 test_map.4.map::Resource::2787387755597111665::1715616223::1716801257::1::::<><>::res://addons/func_godot/src/import/quake_map_file.gd
 test_map.5.map::Resource::5147060626860175970::1715616223::1716801257::1::::<><>::res://addons/func_godot/src/import/quake_map_file.gd
-::res://materials/::1716831504
-bricks.tres::StandardMaterial3D::2510270789499600710::1716831504::0::1::::<><>::uid://ecvjnqi5t3kl::::res://Textures/wall_brick/Bricks019_1K-PNG/Bricks019_1K-PNG_Color.png<>uid://c4lsqfxmrxn01::::res://Textures/wall_brick/bricks_diff_1k.jpg<>uid://bmvo1owcbmc2e::::res://Textures/wall_brick/Bricks019_1K-PNG/Bricks019_1K-PNG_NormalDX.png
-ground.tres::StandardMaterial3D::3163841502622948018::1716831504::0::1::::<><>::uid://8p04p5w27gi6::::res://Textures/ground/Ground072_1K-PNG_Color.png<>uid://duoodxw3dm8sy::::res://Textures/ground/Ground072_1K-PNG_AmbientOcclusion.png<>uid://bncpmyl84ewk4::::res://Textures/ground/Ground072_1K-PNG_NormalGL.png<>uid://btc8o0f6fbaqe::::res://Textures/ground/Ground072_1K-PNG_Roughness.png
-metal.tres::StandardMaterial3D::1103531771696401063::1716831504::0::1::::<><>::uid://c2thgy0vam0vj::::res://Textures/metal/metal_Color.jpg<>uid://b8q1b176tk3it::::res://Textures/metal/metal_Metalness.jpg<>uid://tupmppbssv71::::res://Textures/metal/metal_NormalGL.jpg
+::res://materials/::1717501085
+blood_material.tres::ShaderMaterial::6313056854742174043::1717501085::0::1::::<><>::
+bricks.tres::StandardMaterial3D::2510270789499600710::1717501085::0::1::::<><>::uid://ecvjnqi5t3kl::::res://Textures/wall_brick/Bricks019_1K-PNG/Bricks019_1K-PNG_Color.png<>uid://c4lsqfxmrxn01::::res://Textures/wall_brick/bricks_diff_1k.jpg<>uid://bmvo1owcbmc2e::::res://Textures/wall_brick/Bricks019_1K-PNG/Bricks019_1K-PNG_NormalDX.png
+ground.tres::StandardMaterial3D::3163841502622948018::1717501085::0::1::::<><>::uid://8p04p5w27gi6::::res://Textures/ground/Ground072_1K-PNG_Color.png<>uid://duoodxw3dm8sy::::res://Textures/ground/Ground072_1K-PNG_AmbientOcclusion.png<>uid://bncpmyl84ewk4::::res://Textures/ground/Ground072_1K-PNG_NormalGL.png<>uid://btc8o0f6fbaqe::::res://Textures/ground/Ground072_1K-PNG_Roughness.png
+metal.tres::StandardMaterial3D::1103531771696401063::1717501085::0::1::::<><>::uid://c2thgy0vam0vj::::res://Textures/metal/metal_Color.jpg<>uid://b8q1b176tk3it::::res://Textures/metal/metal_Metalness.jpg<>uid://tupmppbssv71::::res://Textures/metal/metal_NormalGL.jpg
 planks.tres::StandardMaterial3D::1743680763648275130::1714409494::0::1::::<><>::uid://diswgxgu3vhi::::res://Textures/planks/planks_Color.jpg<>uid://c72uniixdj1bo::::res://Textures/planks/planks_AmbientOcclusion.jpg<>uid://cmcnskshu5pgv::::res://Textures/planks/planks_Metalness.jpg<>uid://coc14gy8x6l72::::res://Textures/planks/planks_NormalGL.jpg<>uid://bxmc63t6f0gs3::::res://Textures/planks/planks_Roughness.jpg
 ::res://models/::1713985471
 ::res://models/Ammo/::1713804976
@@ -434,7 +435,7 @@ PistolsMain.png::CompressedTexture2D::3774355603329265240::1710962330::171345517
 PistolsMainIcon.jpg::CompressedTexture2D::7262241787052386578::1710962330::1713455179::1::::<><>::
 PistolsMainSlidesBack.png::CompressedTexture2D::3308103510660836302::1710962330::1713455179::1::::<><>::
 USP.png::CompressedTexture2D::1794596969017155807::1710962330::1713455179::1::::<><>::
-::res://scripts/::1716831504
+::res://scripts/::1717501085
 box_shaker.gd::GDScript::-1::1713823106::0::1::::<>HBoxContainer<>::
 Collision.gd::GDScript::-1::1712048942::0::1::::<>CollisionShape3D<>::
 decal.gd::GDScript::-1::1712667830::0::1::::<>Node3D<>::
@@ -442,12 +443,12 @@ FlickerLight.gd::GDScript::-1::1711106033::0::1::::<>OmniLight3D<>::
 Label.gd::GDScript::-1::1713806483::0::1::::<>Label<>::
 level01.gd::GDScript::-1::1711463530::0::1::::<>Node3D<>::
 LightFlicker.gd::GDScript::-1::1711318164::0::1::::<>OmniLight3D<>::
-new_player.gd::GDScript::-1::1716479932::0::1::::<>CharacterBody3D<>::
+new_player.gd::GDScript::-1::1716897977::0::1::::<>CharacterBody3D<>::
 node_3d.gd::GDScript::-1::1713806483::0::1::::<>Node3D<>::
 OmniLight3D.gd::GDScript::-1::1712048942::0::1::::<>OmniLight3D<>::
 PickableMagnum.gd::GDScript::-1::1713821550::0::1::::<>MeshInstance3D<>::
 pistol.gd::GDScript::-1::1715616223::0::1::::<>Node3D<>::
-Player.gd::GDScript::-1::1716831504::0::1::::<>CharacterBody3D<>::
+Player.gd::GDScript::-1::1717501085::0::1::::<>CharacterBody3D<>::
 Sphere.gd::GDScript::-1::1713727971::0::1::::<>StaticBody3D<>::
 weapon_rigging.gd::GDScript::-1::1715616223::0::1::::<>Node3D<>::
 ::res://scripts/weapon_resource/::1713725600
@@ -466,26 +467,29 @@ untitled-3.wav::AudioStreamWAV::695743664820430938::1712048942::1712048942::1:::
 untitled.wav::AudioStreamWAV::243818150890510376::1712048942::1712048942::1::::<><>::
 ::res://styles/::1713906882
 panels.tres::StyleBoxFlat::6504871957098400065::1713906882::0::1::::<><>::
-::res://subscenes/::1716832944
+::res://subscenes/::1717501085
 baseball_bat.tscn::PackedScene::2689711794152563050::1713725600::0::1::::<><>::
-decal.tscn::PackedScene::6683228094083542856::1716832943::0::1::::<><>::res://scripts/decal.gd<>uid://bl4v5fs3m1mgr::::res://Textures/bullet_hole.png
+blood_decal.tscn::PackedScene::1028444689500961171::1716897981::0::1::::<><>::uid://cv7dehnuodokx::::res://materials/blood_material.tres
+damaged.gd::GDScript::-1::1716897848::0::1::::<>ColorRect<>::
+decal.tscn::PackedScene::6683228094083542856::1716882062::0::1::::<><>::res://scripts/decal.gd<>uid://bl4v5fs3m1mgr::::res://Textures/bullet_hole.png
 floating_collectiable.gd::GDScript::-1::1714409494::0::1::::<>Node3D<>::
 floating_machinegun.gd::GDScript::-1::1715616223::0::1::::<>Node3D<>::
-floating_machinegun.tscn::PackedScene::1342884895564718000::1716832943::0::1::::<><>::res://subscenes/floating_machinegun.gd<>uid://c1yud820f28sn::::res://subscenes/mp5_scene.tscn<>res://subscenes/XZ_Orbit.gd<>res://subscenes/XY_Orbit.gd<>res://subscenes/YZ_Orbit.gd
-machine_ammo.tscn::PackedScene::7202118755165793080::1716832943::0::1::::<><>::res://subscenes/floating_collectiable.gd<>uid://dvgrv545pux5d::::res://models/Ammo/Automatic Ammo/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front_240px.png<>uid://beotd3q5y72h6::::res://models/Ammo/Automatic Ammo/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front.png
-machine_gun.tscn::PackedScene::5935165067080203388::1716832944::0::1::::<><>::uid://w4k3e6umcgp2::::res://models/Weapons/PSXMP5/MP5-eeba241c0a89066447f7985f4d20d516_MP5Texture.jpg<>res://machine_gun.gd<>uid://dxmjnyr1tqsk3::::res://sound effect/auto_fire.wav
+floating_machinegun.tscn::PackedScene::1342884895564718000::1716897979::0::1::::<><>::res://subscenes/floating_machinegun.gd<>uid://c1yud820f28sn::::res://subscenes/mp5_scene.tscn<>res://subscenes/XZ_Orbit.gd<>res://subscenes/XY_Orbit.gd<>res://subscenes/YZ_Orbit.gd
+Health.gd::GDScript::-1::1716897814::0::1::::<>Control<>::
+machine_ammo.tscn::PackedScene::7202118755165793080::1716897979::0::1::::<><>::res://subscenes/floating_collectiable.gd<>uid://dvgrv545pux5d::::res://models/Ammo/Automatic Ammo/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front_240px.png<>uid://beotd3q5y72h6::::res://models/Ammo/Automatic Ammo/Auto_Ammo_240-ceaa0e8ed3dbfe918c1b355df7f28e07_Automatic-Ammo-Front.png
+machine_gun.tscn::PackedScene::5935165067080203388::1716897980::0::1::::<><>::uid://w4k3e6umcgp2::::res://models/Weapons/PSXMP5/MP5-eeba241c0a89066447f7985f4d20d516_MP5Texture.jpg<>res://machine_gun.gd<>uid://dxmjnyr1tqsk3::::res://sound effect/auto_fire.wav
 melee.tscn::PackedScene::7416546297838085712::1713725600::0::1::::<><>::
 Message.gd::GDScript::-1::1713808802::0::1::::<>Label<>::
 mp5_scene.tscn::PackedScene::6648517841433463933::1713725600::0::1::::<><>::uid://bmffk1r1n4ytr::::res://models/PSXMP5/MP5.fbx
-new_player.tscn::PackedScene::3611457867704892685::1716832944::0::1::::<><>::res://scripts/new_player.gd<>res://first_person_camera.gd<>uid://cqtbkis2e4in1::::res://subscenes/machine_gun.tscn<>res://Weapon_Rig.gd<>uid://cyxaj5eaxlkgf::::res://styles/panels.tres<>uid://cfqu7ih3j7kvu::::res://images/Sci-Fi Game Icons/Black/slice15.png<>uid://yo3nv03v0eyn::::res://images/fonts/e1234/E1234.ttf<>res://scripts/box_shaker.gd<>uid://cvastlcy7g15x::::res://images/Sci-Fi Game Icons/Black/slice16.png<>uid://b3afwj2shjcsq::::res://Textures/crosshair003.png<>res://scripts/Label.gd<>uid://ecxtheu7sly3::::res://images/fonts/liquid_crystal/LiquidCrystal-Bold.otf<>uid://pp1rlhqbj5d1::::res://subscenes/Pistol.tscn<>res://subscenes/Message.gd<>uid://svds8nnks5go::::res://sound effect/auto_pickup.wav
+new_player.tscn::PackedScene::3611457867704892685::1716897980::0::1::::<><>::res://scripts/new_player.gd<>res://first_person_camera.gd<>uid://cqtbkis2e4in1::::res://subscenes/machine_gun.tscn<>res://Weapon_Rig.gd<>uid://cyxaj5eaxlkgf::::res://styles/panels.tres<>uid://cfqu7ih3j7kvu::::res://images/Sci-Fi Game Icons/Black/slice15.png<>uid://yo3nv03v0eyn::::res://images/fonts/e1234/E1234.ttf<>res://scripts/box_shaker.gd<>uid://cvastlcy7g15x::::res://images/Sci-Fi Game Icons/Black/slice16.png<>res://subscenes/Health.gd<>uid://b3afwj2shjcsq::::res://Textures/crosshair003.png<>res://scripts/Label.gd<>uid://ecxtheu7sly3::::res://images/fonts/liquid_crystal/LiquidCrystal-Bold.otf<>uid://pp1rlhqbj5d1::::res://subscenes/Pistol.tscn<>res://subscenes/Message.gd<>res://subscenes/damaged.gd<>uid://svds8nnks5go::::res://sound effect/auto_pickup.wav
 orc_knight.tscn::PackedScene::6048796423816836039::1715616223::0::1::::<><>::uid://cacrbe040635a::::res://models/Enemies/monster/fbx/warriror.fbm/orccyborkampen_Mat_diffuseOriginal.png
-orc_warrior.gd::GDScript::-1::1716832942::0::1::::<>CharacterBody3D<>::
-orc_warrior.tscn::PackedScene::8710816691629867848::1716832944::0::1::::<><>::uid://bogu48ghejtlc::::res://models/Enemies/monster/fbx/warriror-aaed431ee663b5d11af9448db4e5f87f_orccyborkampen_Mat_diffuseOriginal.png<>res://subscenes/orc_warrior.gd<>uid://b3qjwfu2n84bl::::res://models/Enemies/monster/textures/Bulkywarrior_Difuse.png
+orc_warrior.gd::GDScript::-1::1717501085::0::1::::<>CharacterBody3D<>::
+orc_warrior.tscn::PackedScene::8710816691629867848::1717501085::0::1::::<><>::uid://bogu48ghejtlc::::res://models/Enemies/monster/fbx/warriror-aaed431ee663b5d11af9448db4e5f87f_orccyborkampen_Mat_diffuseOriginal.png<>res://subscenes/orc_warrior.gd<>uid://b3qjwfu2n84bl::::res://models/Enemies/monster/textures/Bulkywarrior_Difuse.png<>uid://owgll33esrpb::::res://subscenes/blood_decal.tscn
 pickuble_magnum.tscn::PackedScene::621217285272509846::1713725600::0::1::::<><>::uid://culq6cjt7h45h::::res://models/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.obj<>res://PickableMagnum.gd<>res://Sphere.gd<>res://Collision.gd<>res://OmniLight3D.gd
-Pistol.tscn::PackedScene::1085407910488867856::1716832944::0::1::::<><>::res://scripts/pistol.gd<>uid://c4wnj6r4uqsh4::::res://images/muzzle_flashs/m_10.png<>uid://dlx3atiqogwlb::::res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler-bc4960e2fa57642ce49ae829c08a84fe_HighCaliblerPistolText.jpg<>uid://djc4gdn45y2ni::::res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler-bc4960e2fa57642ce49ae829c08a84fe_HighCaliblerMag.jpg<>uid://csqv4x63oxm65::::res://sound effect/fire.wav<>uid://dqdwcu8s1n8c::::res://sound effect/untitled.wav<>uid://j6a2c1bhloyk::::res://sound effect/untitled-3.wav<>uid://bg16s1m3qu1ns::::res://sound effect/click.wav
+Pistol.tscn::PackedScene::1085407910488867856::1716897980::0::1::::<><>::res://scripts/pistol.gd<>uid://c4wnj6r4uqsh4::::res://images/muzzle_flashs/m_10.png<>uid://dlx3atiqogwlb::::res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler-bc4960e2fa57642ce49ae829c08a84fe_HighCaliblerPistolText.jpg<>uid://djc4gdn45y2ni::::res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler-bc4960e2fa57642ce49ae829c08a84fe_HighCaliblerMag.jpg<>uid://csqv4x63oxm65::::res://sound effect/fire.wav<>uid://dqdwcu8s1n8c::::res://sound effect/untitled.wav<>uid://j6a2c1bhloyk::::res://sound effect/untitled-3.wav<>uid://bg16s1m3qu1ns::::res://sound effect/click.wav
 pistol_model.tscn::PackedScene::4783671596932121643::1713725600::0::1::::<><>::uid://c7fjx2mxy8n5o::::res://models/Weapons/PSXPistolPack[FIXED]/Files/HighCalibler/HighCalibler.fbx
 player.tscn::PackedScene::6785758463105069919::1713897175::0::1::::<><>::res://scripts/Player.gd<>uid://cfjstmsfda717::::res://Textures/New Piskel-1.png.png<>res://scripts/box_shaker.gd<>uid://yo3nv03v0eyn::::res://images/fonts/e1234/E1234.ttf<>res://scripts/Label.gd<>uid://cfqu7ih3j7kvu::::res://images/Sci-Fi Game Icons/Black/slice15.png<>uid://cvastlcy7g15x::::res://images/Sci-Fi Game Icons/Black/slice16.png<>res://scripts/weapon_rigging.gd<>uid://pp1rlhqbj5d1::::res://subscenes/Pistol.tscn<>uid://ddwvo0we58w5u::::res://subscenes/melee.tscn
-random_raycast.tscn::PackedScene::6511046819114740283::1716832944::0::1::::<><>::res://random_raycast.gd
+random_raycast.tscn::PackedScene::6511046819114740283::1716897981::0::1::::<><>::res://random_raycast.gd
 TextureRect.gd::GDScript::-1::1713796197::0::1::::<>TextureRect<>::
 XY_Orbit.gd::GDScript::-1::1715616223::0::1::::<>MeshInstance3D<>::
 XZ_Orbit.gd::GDScript::-1::1715616223::0::1::::<>MeshInstance3D<>::

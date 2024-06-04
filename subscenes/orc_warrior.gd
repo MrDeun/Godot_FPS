@@ -20,7 +20,7 @@ func got_hit(damage: float):
 	health -= damage
 	print("CURRENT HEALTH: " + str(health))
 	blood.emitting = true
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.2).timeout
 	blood.emitting = false	
 	if health <= 0:
 		queue_free()
@@ -32,6 +32,10 @@ func _ready():
 	
 func _target_in_range():
 	return global_position.distance_to(player_path.global_position) <= ATTACK_RANGE
+func attack():
+	if global_position.distance_to(player_path.global_position) <= ATTACK_RANGE + 1.5:
+		player_path.got_hit(5.0)
+	pass
 
 func _physics_process(delta):
 	velocity = Vector3.ZERO

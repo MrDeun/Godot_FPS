@@ -1106,6 +1106,7 @@ tracks/60/keys = PackedFloat32Array(0, 1, 0.411994, 0.594481, -0.567405, 0.39358
 [sub_resource type="Animation" id="Animation_qanbg"]
 resource_name = "root|attackA"
 length = 0.933333
+step = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -1533,6 +1534,20 @@ tracks/60/path = NodePath("RootNode/root/Skeleton3D:shoulder.l")
 tracks/60/interp = 1
 tracks/60/loop_wrap = true
 tracks/60/keys = PackedFloat32Array(0, 1, 0.411994, 0.594481, -0.567405, 0.393581)
+tracks/61/type = "method"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("..")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0.528),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_w27bg"]
 resource_name = "root|attackb"
@@ -3750,6 +3765,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lxomy")
 libraries = {
 "": SubResource("AnimationLibrary_hwlkx")
 }
+speed_scale = 0.33
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.914058, 0)

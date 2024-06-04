@@ -26,6 +26,7 @@ var health = 100
 const max_health = 100
 
 var can_shoot = true
+var can_input = true
 
 enum weapons {
 	PISTOL,
@@ -48,7 +49,14 @@ func grant_weapon(name:String) -> bool:
 	else:
 		return grant_ammo("auto_ammo",100)
 		
-
+func die():
+	rotation.x = PI/2
+	velocity.y = JUMP_VELOCITY
+	camera.rotation.z = -PI/2
+	can_input = false
+	weapon_rig.visible = false
+	health_hud.visible = false
+	ammo_hud.visible = false
 func grant_ammo(name:String,amount:int) -> bool:
 	match name:
 		"auto_ammo":
@@ -66,9 +74,8 @@ func got_hit(damage:int):
 	red_screen.got_hit(damage/max_health)
 	health_hud.update()
 	if health <= 0:
-		pass
-	
-	
+		die()
+	pass
 
 func _fire_auto():
 	gun_raycast.target_position = Vector3(randf_range(-5,5),randf_range(-5,5),-50)
@@ -143,6 +150,12 @@ func play_sound():
 	pass
 
 func _input(event):
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		camera.rotate_x(-deg_to_rad(event.relative.y * MouseSense))
+		rotate_y(-deg_to_rad(event.relative.x * MouseSense))
+		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x,-70,80)
+	if not can_input:
+		return
 	if event.is_action_pressed("shoot") and Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event.is_action_pressed("DEBUG_damage"):
@@ -157,10 +170,6 @@ func _input(event):
 			pistol.reload()	
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		camera.rotate_x(-deg_to_rad(event.relative.y * MouseSense))
-		rotate_y(-deg_to_rad(event.relative.x * MouseSense))
-		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x,-70,80)
 	
 func deactivate_weapon():
 	match current_weapon:
@@ -187,24 +196,24 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.	
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "forward", "back")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		player_velocity += ACCELARATION
-		player_velocity = clamp(player_velocity,0,max_speed)		
-		velocity.x = direction.x * player_velocity
-		velocity.z = direction.z * player_velocity
-		if is_on_floor():
-			weapon_rig.position.x += 0.005 * sin(time_stamp*10)
-			weapon_rig.position.y += 0.0025 * sin(time_stamp*20)
-		else:
+	if can_input:
+		var input_dir = Input.get_vector("left", "right", "forward", "back")
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			player_velocity += ACCELARATION
+			player_velocity = clamp(player_velocity,0,max_speed)		
+			velocity.x = direction.x * player_velocity
+			velocity.z = direction.z * player_velocity
+			if is_on_floor():
+				weapon_rig.position.x += 0.005 * sin(time_stamp*10)
+				weapon_rig.position.y += 0.0025 * sin(time_stamp*20)
+			else:
+				weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
+				weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
+		else:	
+			player_velocity = lerpf(player_velocity,0,0.1)
+			velocity.x = direction.x * player_velocity
+			velocity.z = direction.z * player_velocity
 			weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
 			weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
-	else:	
-		player_velocity = lerpf(player_velocity,0,0.1)
-		velocity.x = direction.x * player_velocity
-		velocity.z = direction.z * player_velocity
-		weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
-		weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
-		
 	move_and_slide()
