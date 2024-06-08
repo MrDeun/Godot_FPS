@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var decal_scene = preload("res://subscenes/decal.tscn")
 @onready var random_raycast = preload("res://subscenes/random_raycast.tscn")
 @onready var red_screen = $PlayerInterface/SubViewportContainer/SubViewport/damaged
+@onready var msg = $PlayerInterface/SubViewportContainer/SubViewport/HUD2/Message
 #Auto's readies
 @onready var auto = $PlayerInterface/SubViewportContainer/SubViewport/weapon_camera/Weapon_Rig/MachineGun
 @onready var auto_pickup = $audio_files/auto_ammo_pickup
@@ -50,13 +51,15 @@ func grant_weapon(name:String) -> bool:
 		return grant_ammo("auto_ammo",100)
 		
 func die():
-	rotation.x = PI/2
-	velocity.y = JUMP_VELOCITY
-	camera.rotation.z = -PI/2
-	can_input = false
-	weapon_rig.visible = false
-	health_hud.visible = false
-	ammo_hud.visible = false
+	if can_input:
+		rotation.z = -PI/2
+		velocity.y = JUMP_VELOCITY
+		msg.announce("YOU DIED! PRESS SPACEBAR TO TRY AGAIN!",9999)
+		can_input = false
+		can_shoot = false
+		weapon_rig.visible = false
+		health_hud.visible = false
+		ammo_hud.visible = false
 func grant_ammo(name:String,amount:int) -> bool:
 	match name:
 		"auto_ammo":
@@ -73,7 +76,7 @@ func got_hit(damage:int):
 	health = max(health-damage,0)
 	red_screen.got_hit(damage/max_health)
 	health_hud.update()
-	if health <= 0:
+	if health <= 0 and can_input:
 		die()
 	pass
 
@@ -192,7 +195,10 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		if can_input:
+			velocity.y = JUMP_VELOCITY
+		else:
+			get_tree().change_scene_to_file("res://func_godot_test.tscn")
 
 	# Get the input direction and handle the movement/deceleration.	
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -217,3 +223,9 @@ func _physics_process(delta):
 			weapon_rig.position.y = lerpf(weapon_rig.position.y,-0.415,0.1)
 			weapon_rig.position.x = lerpf(weapon_rig.position.x,-0.032,0.1)
 	move_and_slide()
+
+
+func _on_kill_zone_body_entered(body):
+	if body.is_in_group("player"):
+		got_hit(9999)
+	pass # Replace with function body.

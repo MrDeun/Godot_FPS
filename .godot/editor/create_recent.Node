@@ -1,3 +1,5 @@
+CollisionShape3D
+Area3D
 ColorRect
 GPUParticles3D
 Node3D
@@ -8,8 +10,5 @@ AnimationTree
 OmniLight3D
 NavigationAgent3D
 NavigationRegion3D
-CollisionShape3D
 CharacterBody3D
 LightmapGI
-FuncGodotMap
-QodotMap
